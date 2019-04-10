@@ -1,0 +1,896 @@
+\documentclass{memoir}
+
+\input{header}
+\title{Smooth representations of locally profinite groups}
+\author{Emile T. Okada}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Pro-\texorpdfstring{$\mathcal C$}{C} groups}
+\section{Topological preliminaries}
+\section{Pro-\texorpdfstring{$\mathcal C$}{C} groups}
+\begin{thm}
+    Let $\mathcal C$ be a formation of finite groups.
+    Then the following are equivalent.
+    \begin{enumerate}
+        \item $G$ is a pro-$\mathcal C$ group;
+        \item $G$ is compact Hausdorff totally disconnected, and for each open normal subgroup $U$ of $G$, $G/U\in \mathcal C$;
+        \item $G$ is compact and the identity element $1$ of $G$ admits a fundamental system $\mathcal U$ of open neighbourhoods $U$ such that $\bigcap_{U\in\mathcal U} U = 1$ and each $U$ is an open normal subgroup of $G$ with $G/U\in \mathcal C$;
+        \item The identity element $1$ of $G$ admits a fundamental system $\mathcal U$ of open neighbourhoods $U$ such that each $U$ is a normal subgroup of $G$ with $G/U\in\mathcal C$, and 
+            \begin{equation}
+                \varprojlim_{U\in\mathcal U}G/U.
+            \end{equation}
+    \end{enumerate}
+\end{thm}
+\chapter{Smooth Representations of Locally Profinite Groups}
+\section{Locally profinite groups}
+\begin{definition}
+    \textit{A locally profinite group} is a topological group $G$ such that every open neighbourhood of the identity in $G$ contains a compact open sub-group of $G$.
+\end{definition}
+\begin{proposition}
+    Let $G$ be a locall profinite group.
+    \begin{enumerate}
+        \item Closed subgroups of $G$ are locally profinite.
+        \item Quotients of $G$ by closed normal subgroups are locally profinite.
+    \end{enumerate}
+\end{proposition}
+\begin{proposition}
+    Let $G$ be a compact locally profinite group then the map 
+    \begin{equation}
+        G\to \varinjlim G/K
+    \end{equation}
+    is a topological isomorphism, where $K$ ranges over all open normal subgroups of $G$.
+\end{proposition}
+\begin{proposition}
+    A topological group $G$ is locally profinite iff $G$ is locally compact and totally disconnected.
+\end{proposition}
+\begin{proposition}
+    Let $\set{K_n}_n$ be a decreasing sequence of compact open subgroups of $G$ such that $\cap_nK_n = \set{e}$.
+    Then for any neighbourhood $U$ of $e$ there is an $n$ such that $K_n\subseteq U$.
+\end{proposition}
+\section{Smooth representations}
+\begin{definition}
+    Let $G$ be a locally profinite group and $(\pi,V)$ a complex representation of $G$.
+    $(\pi,V)$ is \textit{smooth} if for every $v\in V$ there is a compact open subgroup $K$ of $G$ such that $v\in V^K$.
+    
+    $(\pi,V)$ is \textit{admissable} if the space $V^K$ is finite dimensional for each compact open subgroup $K$ of $G$.
+\end{definition}
+\begin{proposition}
+    Let $(\pi,V)$ be a smooth representation.
+    Then subrepresentations and quotients are also smooth.
+\end{proposition}
+\subsection{Characters}
+\begin{proposition}
+    Let $\psi:G\to \C^\times$ be a group homomorphism.
+    The following are equivalent
+    \begin{enumerate}
+        \item $\psi$ is continuous,
+        \item $\ker \psi$ is open,
+        \item $\ker \psi$ contains an open set,
+        \item the corresponding representation on $\C$ is smooth.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    $(4)\Leftrightarrow (3) \Leftrightarrow (2) \Rightarrow (1)$ clear.
+    $(1)\Rightarrow(2)$ Let $U$ be an open subset of $\C^\times$.
+    Then $\psi^{-1}(U)$ is open and so contains an open compact subgroup $K$.
+    For $U$ sufficiently small, it contains no non-trivial subgroups of $\C^\times$ and so $K\subseteq \ker\psi$.
+\end{proof}
+\begin{definition}
+    We call a homomorphism $\psi:G\to \C^\times$ that satisfies any of the above conditions a chcaracter of $G$.
+\end{definition}
+\begin{proposition}
+    If $\psi:G\to \C^\times$ is a character and $G$ is a union of its open compact subgroups, then $\psi(G)\subseteq S^1$.
+\end{proposition}
+\subsection{Semisimplicity}
+\begin{proposition}
+    If $G$ is compact then any smooth representation is semi-simple.
+    %Leave semi-simple. It is for the line break
+\end{proposition}
+\begin{proof}
+    Let $v\in V$ and $K\subseteq G$ be an open compact subgroup such that $v\in V^K$.
+    $G$ is compact and so $\abs{G:K}<\infty$.
+    Thus $W = \C Gv$ is finite dimensional.
+    Moreover, if we let $K' = \cap_{g\in G/K}gKg^{-1}$ then this is a open normal subgroup of $G$ and $K'$ acts triviall on $W$.
+    Thus $W$ descends to a $G/K'$ representation.
+    But $G/K'$ is finite and so $W$ is a sum of its simple submodules.
+    It follows that the same holds for $V$ and so $V$ is semisimple.
+\end{proof}
+\begin{corollary}
+    If $G$ is compact then any irreducible smooth representation is finite dimensional.
+\end{corollary}
+\begin{corollary}
+    Let $G$ be a locally profinite group, and let $K$ be a compact open subgroup of $G$. 
+    Let $(V,\pi)$ be a smooth representation of $G$.
+    Then $\Res_K^GV$ is semisimple.
+\end{corollary}
+\begin{proposition}
+    Let $G$ be a locally profinite group, $K$ a compact open subgroups of $G$ and $(\pi,V)$ a smooth representation of $G$.
+    \begin{enumerate}
+        \item
+            \begin{equation}
+                V = \bigoplus_{\phi \in \hat K}V^\rho.
+            \end{equation}
+        \item Let $(\sigma,W)$ be a representation of $G$ and $f:V\to W$ a $G$-homomorphism.
+            Then for every $\rho\in \hat K$ we have $f(V^\rho)\subseteq W^\rho$ and $W^\rho\cap f(V) = f(V^\rho)$.
+    \end{enumerate}
+\end{proposition}
+\begin{corollary}
+    Let $U\to V\to W$ be a sequence of smooth representations of $G$.
+    The sequence is exact iff $U^K\to V^K\to W^K$ is exact (as vector spaces) for all compact open subgroups $K$ of $G$.
+\end{corollary}
+\begin{definition}
+    If $H$ is a subgroup of $G$, we define 
+    \begin{equation}
+        V(H) = \text{span}\set{v-\pi(h)v:v\in V,h\in H}.
+    \end{equation}
+\end{definition}
+\begin{corollary}
+    Let $G$ be a locally profinite group, and let $(\pi, V)$ be a smooth representation of $G$.
+    Let $K$ be a compact open subgroup of $G$.
+    Then
+    \begin{equation}
+        V(K) = \bigoplus_{\rho\in \hat K\backslash\set{1}}V^\rho
+    \end{equation}
+    is the unique $K$-complement to $V^K$ in $V$.
+\end{corollary}
+\begin{proof}
+    Consider the map $V\to V^K$ given by quotienting by $\bigoplus_{\rho\in \hat K\backslash\set{1}}V^\rho$.
+    $V(K)$ must lie in the kernel so we have on inclusion.
+    Conversly, if $U$ is an irreducible $K$-subrepresentation of $V$ not isormophic to the trivial representation the $U(K) = U$ and so we get the other inclusion.
+\end{proof}
+\begin{proposition}
+    Let $(\pi,V)$ be an aribitrary representation.
+    Define $V^\infty = \bigcup_KV^K$, where $K$ ranges over compact open subgroups of $G$.
+    Then $V^\infty$ is a smooth subrepresentation of $G$.
+\end{proposition}
+\begin{proposition}
+    Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ be an arbitrary representation.
+    Then every morphism $f:V\to W$ factors through $W^\infty$.
+\end{proposition}
+\begin{corollary}
+    $(-)^\infty:\Rep_G\to \Smo_G$ is a functor.
+\end{corollary}
+\begin{thm}
+    Let $i:\Smo_G\to \Rep_G$ be the inclusion functor.
+    Then $i\dashv (-)^\infty$.
+\end{thm}
+\subsection{Induction}
+\begin{definition}
+    Let $G$ be a locally profinite group, $H$ a closed or open subgroup and $(\sigma,W)$ be a smooth representation of $H$.
+    Define $\sInd_H^G(W) = (\Ind_H^G(W))^\infty$.
+    Note that if $(\pi,V)$ is a smooth $G$ representation then so is $\Res_H^G(V)$.
+    Write $\sRes$ for the functor between $\Smo_G\to\Smo_H$.
+\end{definition}
+\begin{proposition}
+    $\sRes_H^G\dashv \sInd_H^G$.
+\end{proposition}
+\begin{proof}
+    Let $V$ be a $G$-representation and $W$ be a $H$-representation.
+    Let $\alpha_W:\sInd_H^G(W)\to W$ be the $H$-homomorphism $f\mapsto f(e)$.
+    Then we have the maps
+    \begin{align}
+        \Hom(\sRes_H^G(V),W) &\leftrightarrow \Hom(V,\sInd_H^G(W)) \\
+        \phi &\mapsto  (v\mapsto (g\mapsto \phi(gv)) \\
+        \alpha_W\circ\psi &\mapsfrom \psi.
+    \end{align}
+    It is straightforward to check that these maps are mutually inverse.
+\end{proof}
+\begin{proposition}
+    $\sInd_H^G$ is exact.
+\end{proposition}
+\begin{definition}
+    Let $G$ be a locally profinite group, $H$ a closed or open subgroup and $(\sigma,W)$ be a smooth representation of $H$.
+    Define $\cInd_H^G(W)$ to be the subset of $\sInd_H^G(W)$ consisting of functions with compact support modulo $H$ i.e. the image of $\supp(f)$ in $H\backslash G$ is compact.
+    It is an easy check to see that $\cInd_H^G(W)$ yields a subrepresentation of $\sInd_H^G(W)$.
+\end{definition}
+\begin{lemma}
+    Let $G$ be a locally profinite group, $H$ a subgroup, and $K$ a open compact subgroup.
+    Then 
+    \begin{enumerate}
+        \item $K$-orbits in $H\backslash G$ are open and compact.
+        \item If a subset $C\subseteq H\backslash G$ is compact it lies in the union of finitely many $K$-orbits.
+    \end{enumerate}
+\end{lemma}
+\begin{proposition}
+    Let $f\in \sInd_H^G(W)$.
+    Then $f$ has compact support modulo $H$ iff $\supp(f) \subseteq H\cdot C$ for some $C\subseteq G$ compact.
+\end{proposition}
+\begin{proof}
+    $f\in\sInd_H^G(W)$ so there is a compact open subgroup $K$ such that $K$ stabilises $f$.
+    It follows that the support of $f$ is a union of double $(H,K)$ cosets.
+    Let $q:G\to H\backslash G$ be the quotient map.
+    Then $q(\supp(f))$ is a union of $K$-orbits.
+
+    $(\Rightarrow)$ Suppose $q(\supp(f))$ is compact.
+    By the lemma it is a finite union of $K$-orbits.
+    Thus $\supp(f)$ is a union of finitely many double $(H,K)$-cosets.
+    Let $g_1,\dots,g_n$ be double coset representatives.
+    Then $\supp(f) = H\cdot (\cup_ig_iK)$ where $\cup_ig_iK$ is compact (and open).
+
+    $(\Leftarrow)$ Suppose $\supp(f)\subseteq H\cdot C$ with $C$ compact.
+    Then $q(H\cdot C) = q(C)$ is compact and so lies in a finite union of $K$ orbits.
+    But $q(\supp(f))\subseteq q(C)$ and so $q(\supp(f))$ must be a finite union of $K$-orbits and hence must be compact.
+\end{proof}
+\begin{remark}
+    The proposition is also true if we insist that $C$ is open.
+\end{remark}
+\begin{proposition}
+    $\cInd_H^G$ is exact.
+\end{proposition}
+\begin{proposition}
+    Let $H$ be an open subgroup of $G$, and $\phi\in \Ind_H^G(W)$ be compactly supported modulo $H$.
+    Then $\phi\in \cInd_H^G(W)$.
+\end{proposition}
+\begin{definition}
+    Let $H$ be an open subgroup of $G$ and $W$ an $H$ representation.
+    Then there is a $H$-homomorphism $\alpha_W^c:W\to \cInd_H^G$ given by $w\mapsto f_w$ where $f_w$ is the function that sends $h$ to $h.w$ and is $0$ outside of $H$.
+    By the previous proposition, this does indeed lie in $\cInd_H^G(W)$.
+\end{definition}
+\begin{lemma}
+    Let $H$ be an open subgroup of $G$, and let $W$ be a representation of $H$.
+    Then
+    \begin{enumerate}
+        \item The map $\alpha_W^c$ is an $H$-isomorphism with the space of functions $f\in\cInd_H^G(W)$ such that $\supp(f)\subseteq H$.
+        \item  If $\mathcal W$ is a basis for $W$ and $\mathcal G$ a choice of representatives for $G/H$, then $\set{gf_w:w\in \mathcal W,g\in \mathcal G}$ is a basis for $\cInd_H^G(W)$.
+    \end{enumerate}
+\end{lemma}
+\begin{thm}
+    Let $H$ be an open subgroup of $G$, $W$ an $H$-representation and $V$ a $G$-representation.
+    Then there is a natural bijection 
+    \begin{equation}
+        \Hom_G(\cInd_H^G(W),V) \leftrightarrow \Hom_H(W,\Res_H^G(V)).
+    \end{equation}
+\end{thm}
+\begin{proof}
+    We have the maps
+    \begin{align}
+        \Hom_G(\cInd_H^G(W),V) &\leftrightarrow \Hom_H(W,\Res_H^G(V)) \\
+        \phi &\mapsto \phi\circ \alpha_W^c \\
+        (gf_w \mapsto g\psi(w)) &\mapsfrom \psi.
+    \end{align}
+    It is starightforward to check that the second map is well-defined and that these maps are mutually inverse.
+\end{proof}
+\section{Irreducible representations and the contragredient}
+\begin{remark}
+    From now on assume that $G/K$ is countable for any compact open subgroup $K$ of $G$.
+\end{remark}
+\begin{lemma}
+    Let $V$ be an irreducible smooth representation of $G$.
+    Then $\dim_\C V$ is countable.
+\end{lemma}
+\begin{lemma}
+    (Schur's lemma). If $V$ is an irreducible smooth representation of $G$, then $\End_G(V) = \C$.
+\end{lemma}
+\begin{corollary}
+    Let $V$ be an irreducible smooth representation of $G$.
+    Then the central character of $V$ is smooth.
+\end{corollary}
+\begin{corollary}
+    If $G$ is abelian then any irreducible smooth representation of $G$ is $1$-dimensional.
+\end{corollary}
+\begin{definition}
+    Let $V$ be a smooth $G$-representation.
+    We define the contragredient, or smooth dual, of $V$ to be $\check V = (V^*)^\infty$.
+\end{definition}
+\begin{remark}
+    If $K\le G$ is a compact open subgroup of $G$, then for any $f\in (\check V)^K$, $f(V(K)) = 0$.
+\end{remark}
+\begin{proposition}
+    \label{prop:dual}
+    Restriction to $V^K$ induces an isomorphism 
+    \begin{equation}
+        (\check V)^K \cong (V^K)^*.
+    \end{equation}
+\end{proposition}
+\begin{thm}
+    The canonical morphism $V\to \check{\check V}$ is an isomorphism iff $V$ is admissable.
+\end{thm}
+\begin{proposition}
+    The contravariant functor $\vee:\Rep(G) \to \Rep(G)$ is exact.
+\end{proposition}
+\begin{proof}
+    Follows from proposition \ref{prop:dual}.
+\end{proof}
+\begin{corollary}
+    $V$ is irreducible iff $\check V$ is irreducible.
+\end{corollary}
+\begin{proposition}
+    Let $V$ and $W$ be smooth representations of $G$, and $\mathcal P(V,W)$ be the space of $G$-invariant bilinear pairings $V\times W\to \C$.
+    Then there are isomorphisms
+    \begin{equation}
+        \Hom_G(V,\check W) \cong \mathcal P(V,W) \cong \Hom_G(W,\check V).
+    \end{equation}
+\end{proposition}
+\section{Measures}
+\begin{proposition}
+    Let $C_c^\infty(G)$ be the space of locally constant functions on $G$ with compact support.
+    Then $(C_c^\infty(G),\lambda)$ and $(C_c^\infty,\rho)$ are both smooth.
+\end{proposition}
+\begin{remark}
+    Suppose a function $f:G\to \C$ is fixed by $\rho(K)$ (or $\lambda(K)$) for $K$ a compact open subgroup $K$ of $G$.
+    Then $f$ has compact support iff $\supp(f)\subseteq C$ for some compact set $C$.
+\end{remark}
+\begin{definition}
+    A right Haar integral on $G$ is a non-zero $G$-homomorphism $I:(C_c^\infty(G),\rho)\to \C$ such that $I(f)\ge 0$ for any $f\in C_c^\infty(G)$, $f\ge 0$.
+\end{definition}
+\begin{thm}
+    There exists a unique right Haar integral $I:C_c^\infty(G)\to \C$ up to scaling.
+\end{thm}
+\begin{proof}
+    Let $K$ be a compact open subgroup of $G$ and write $^KC_c^\infty$ for the subspace $(C_c^\infty(G))^{\lambda(K)}$.
+    Then $^KC_c^\infty(G) = \cInd_K^G1_K$.
+    It follows that
+    \begin{equation}
+        \dim_\C\Hom_G(^KC_c^\infty(G),\C) = 1.
+    \end{equation}
+    If $f_{K,g}$ denotes the indicator function on the coset $Kg$, then the map 
+    \begin{equation}
+        I_K:^KC_c^\infty(G)\to \C, f_{K,g}\mapsto 1
+    \end{equation}
+    is a $G$-homomorphism and so all $G$-homomorphisms $^KC_c^\infty\to \C$ are a multiple of this map.
+
+    Now let $\set{K_n}_n$ be a descending sequence of compact open subgroups of $G$ such that $\cap_nK_n = \set{e}$.
+    Then $\set{^{K_n}C_c^\infty(G)}_n$ is an ascending sequence of subspaces of $C_c^\infty(G)$ such that $C_c^\infty(G) = \cup_n \hphantom{ }^{K_n}C_c^\infty(G)$.
+    Let $I_n = I_{K_n}/\abs{K_1:K_n}$.
+    Then 
+    \begin{equation}
+        I_{n+1}(f_{g,K_n}) = \abs{K_n:K_{n+1}}/\abs{K_1:K_{n+1}} = 1/\abs{K_1:K_n} = I_n(f_{g,K_n}).
+    \end{equation}
+    It follows that $I_{n+1}|_{^{K_n}C_c^\infty(G)} = I_n$ and so we can define a $G$-homomorphism $I:C_c^\infty(G)\to \C$.
+    It is clear that this map is a right Haar measure.
+
+    Now suppose $I'$ is another Haar measure.
+    Then there are $\alpha_n\in\C$ such that $I'|_{^{K_n}C_c^\infty(G)} = \alpha_n\cdot I_n$ for all $n$.
+    Evaluating at the $f_{g,K_n}$ gives that $\alpha_n = \alpha_{n+1} =: \alpha$ for all $n$ and so $I' = \alpha I$.
+\end{proof}
+\begin{remark}
+    If $f\ge0$ and there exists a $g\in G$ such that $f(g)>0$ then $I(f)>0$.
+\end{remark}
+\begin{definition}
+    Define $\vee:C_c^\infty(G)\to C_c^\infty(G)$ by $f\mapsto \check f$ where $\check f(g) = f(g^{-1})$.
+    Then $\vee:(C_c^\infty(G),\lambda)\to (C_c^\infty(G),\rho)$ is a $G$-isomorphism.
+\end{definition}
+\begin{remark}
+    $\vee$ induces a bijection between left and right Haar measures.
+\end{remark}
+\begin{definition}
+    Let $I$ be a left Haar measure on $G$.
+    For a non-empty compact open subset $S$ of $G$, let $\Gamma_S$ denote its characteristic function.
+    We define 
+    \begin{equation}
+        \mu_G(S) = I(\Gamma_S).
+    \end{equation}
+    Then $\mu_G(gS) = \mu_G(S)$ for all $g\in G$.
+\end{definition}
+\begin{remark}
+    We have that $I(f) = \int_Gfd\mu_G$ for $f\in C_c^\infty(G)$.
+\end{remark}
+\begin{definition}
+    We can extend the domain of Haar integration as follows.
+    Let $\mu_G$ be a left Haar measure on $G$, and $f$ be a function on $G$ invariant under left translation by a compact open subgroup $K$ of $G$.
+    If the series 
+    \begin{equation}
+        \sum_{g\in K\backslash G}\int_{Kg}\abs{f(x)}d\mu_G(x)
+    \end{equation}
+    converges define
+    \begin{equation}
+        \int_Gf(x)d\mu_G(x) = \sum_{g\in K\backslash G}\int_{Kg}f(x)d\mu_G(x).
+    \end{equation}
+\end{definition}
+\begin{proposition}
+    This definition does not depend on $K$ and is left translation invariant.
+\end{proposition}
+\begin{proof}
+    Let $K'$ be any other compact open subgroup of $G$.
+    Then $K\cap K'$ has finite index in $K$ and $K'$.
+    It follows that 
+    \begin{align}
+        \sum_{g\in K\backslash G}\int_{Kg}\abs{f(x)}d\mu_G(x) &= \sum_{g\in K\backslash G}\sum_{h\in K\cap K'\backslash K}\int_{K\cap K' hg}\abs{f(x)}d\mu_G(x) \nonumber \\
+                                                              &= \sum_{g\in K\cap K'\backslash G}\int_{K\cap K' g}\abs{f(x)}d\mu_G(x) \nonumber \\
+                                                              &= \sum_{g\in K'\backslash G}\sum_{h\in K\cap K'\backslash K'}\int_{K\cap K' hg}\abs{f(x)}d\mu_G(x) \nonumber \\
+                                                              &= \sum_{g\in K'\backslash G}\int_{K' g}\abs{f(x)}d\mu_G(x)
+    \end{align}
+    and all series converge.
+    It follows that the same series but without absolute values converge, and so we obtain the first part of the proposition.
+
+    For the second part let $y\in g$.
+    Then $\set{yg:g\in K\backslash G}$ is a set of coset representatives for $yKy^{-1}\backslash G$ and
+    \begin{align}
+        \sum_{g\in K\backslash G}\int_{yKy^{-1}\cdot yg}\abs{\lambda_yf(x)}d\mu_G(x) &= \sum_{g\in K\backslash G}\int_{G}1_{yKy^{-1}yg}(x)\abs{\lambda_yf(x)}d\mu_G(x) \nonumber \\
+                                                                                     &= \sum_{g\in K\backslash G}\int_{G}\lambda_y(1_{Kg}(x)\abs{f(x)})d\mu_G(x) \nonumber \\
+                                                                                     &= \sum_{g\in K\backslash G}\int_{Kg}\abs{f(x)}d\mu_G(x).
+    \end{align}
+    Thus $\int_G\lambda_yfd\mu_G$ is defined and the above calculation, but without absolute values, shows that it is equal to $\int_Gfd\mu_G$.
+\end{proof}
+\begin{proposition}
+    Let $G_1,G_2$ be locally profinite groups.
+    Then the natural map $C_c^\infty(G_1)\otimes_\C C_c^\infty(G_2)\to C_c^\infty(G_1\times G_2)$ is an isomorphism that respects both left and right translation.
+\end{proposition}
+\begin{proposition}
+    If $\mu_1,\mu_2$ are left Haar measures then the map 
+    \begin{equation}
+        \mu:C_c^\infty(G_1\times G_2)\to \C
+    \end{equation}
+    defined via the above isomorphism is also a left Haar measure.
+\end{proposition}
+\begin{proposition}
+    Let $f\in G_1\times G_2$.
+    Then the function
+    \begin{equation}
+        f_1(g_1) = \int_{G_2}f(g_1,g_2)d\mu_2(g_2)
+    \end{equation}
+    lies in $C_c^\infty(G_2)$ and 
+    \begin{equation}
+        \int_{G_1\times G_2} f(g) d\mu_G(g) = \int_{G_1}f_1(g_1)d\mu_1(g_1).
+    \end{equation}
+\end{proposition}
+\begin{definition}
+    Let $\mu_G$ be a left Haar measure on $G$.
+    For $g\in G$, $f\mapsto \int_G\rho_gfd\mu_G$ is another left Haar measure.
+    It follows that there is a unique $\delta_G(g)\in \R_+^\times$ such that 
+    \begin{equation}
+        \delta_G(g) \int_G\rho_gfd\mu_G = \int_Gfd\mu_G.
+    \end{equation}
+    This map $\delta_G:G\to \R_+^\times$ is a homomorphism.
+\end{definition}
+\begin{proposition}
+    $\delta_G$ is trivial on open compact subgroups of $G$.
+\end{proposition}
+\begin{proposition}
+    A homomorphism $\psi:G\to R_+^\times$ is a character iff it is trivial on compact open subgroups.
+\end{proposition}
+\begin{corollary}
+    $\delta_G$ is a character.
+\end{corollary}
+\begin{proposition}
+    $\delta_G$ is trivial iff $G$ is unimodular.
+\end{proposition}
+\begin{proposition}
+    The functional $f\mapsto \int_G\delta_G(x)^{-1}f(x)d\mu_G(x)$ is a right Haar integral.
+\end{proposition}
+\begin{proof}
+    \begin{align}
+        \rho_yf\mapsto \int_G\delta_G(x)^{-1}\rho_yf(x)d\mu_G(x) &= \delta_G(y)\int_G\rho_y(\delta_G(x)^{-1}f(x))d\mu_G(x) \nonumber \\
+                                                                 &= \int_G\delta_G(x)^{-1}f(x)d\mu_G(x).
+    \end{align}
+\end{proof}
+\begin{definition}
+    Let $H$ be a closed subgroup of $G$, $\theta:H\to \C^\times$ a character and $C_c^\infty(H\backslash G,\theta) = \cInd_H^G(\theta)$.
+\end{definition}
+\begin{definition}
+    Let $\mu_H$ be a left Haar measure on $H$.
+    Define the map $\sim:(C_c^\infty(G),\rho)\to C_c^\infty(H\backslash G,\theta)$ by
+    \begin{equation}
+        \tilde f(g) = \int_H (\theta\delta_H)^{-1}\rho_gfd\mu_H.
+    \end{equation}
+    This map is a $G$-homomorphism and 
+    \begin{equation}
+        \widetilde{(\lambda_hf)} = (\theta\delta_H)(h)^{-1}\tilde f
+    \end{equation}
+    for $f\in C_c^\infty(G),h\in H$.
+\end{definition}
+\begin{lemma}
+    $\sim$ is surjective.
+\end{lemma}
+\begin{proof}
+    Let $K$ be an open compact subgroup of $G$.
+    Then each double coset $HgK$ supports at most a 1-dimensional subspace of $C_c^\infty(H\backslash G,\theta)^K$ and these spaces span $C_c^\infty(H\backslash G,\theta)^K$.
+    But each $1_{gK}\in (C_c^\infty(G))^K$ maps to a non-zero element of $C_c^\infty(H\backslash G,\theta)^K$ with support $HgK$ and so the map is surjective.
+\end{proof}
+\begin{corollary}
+    Let $\theta:H\to \C^\times$ be a character of $H$ and $I$ a right Haar intgral on $G$.
+    Then $\Hom_G((C_c^\infty(H\backslash G,\theta),\rho),\C) \ne 0$ iff $I$ factors through $C_c^\infty(H\backslash G,\theta)$.
+\end{corollary}
+\begin{corollary}
+    $\dim_\C\Hom_G((C_c^\infty(H\backslash G,\theta),\rho),\C) = 0$ or $1$.
+\end{corollary}
+\begin{remark}
+    Let $K$ be a open compact subgroup of $G$, $g\in G$ and $f = 1_{gK}$.
+    Suppose $\delta_G|_H = \theta \delta_H$.
+    Let $x\in G$. 
+    Then 
+    \begin{equation}
+        \tilde f(x) = \int_H (\theta\delta_H)(h)^{-1}1_{gKx^{-1}}(h) d\mu_H(h).
+    \end{equation}
+    But $h\in gKx^{-1}$ iff $x = h^{-1}gk$ for some $k\in K$.
+    Thus $\tilde f(x)$ is $0$ if $x\not\in HgK$.
+    If $x\in HgK$ write $x = h_0gk_0$ and $L = gKg^{-1}\cap H$.
+    Then 
+    \begin{align}
+        \tilde f(x) &= \int_H (\theta\delta_H)(h)^{-1}1_{Lh_0^{-1}}(h) d\mu_H(h) \nonumber \\
+                    &= (\theta\delta_H)(h_0) \int_H \rho_{h_0}((\theta\delta_H)^{-1}1_{L})(h) d\mu_H(h) \nonumber \\
+                    &= \theta(h_0)\int_L (\theta\delta_H)(h)^{-1}d\mu_H(h).
+    \end{align}
+    But $\delta_G$ is trivial on $L$ and so $\tilde f(x) = \theta(h_0)\mu_H(L)$.
+    It follows that 
+    \begin{equation}
+        \widetilde{1_{h_igK}}(hgk) = \theta(h)\delta_G(h_i)^{-1}\mu_H(L).
+    \end{equation}
+\end{remark}
+\begin{lemma}
+    \label{lem:I_ker}
+    Suppose $\delta_G|_H = \theta \delta_H$ and let $I$ denote the right Haar integral 
+    \begin{equation}
+        f\mapsto \int_G\delta_G(x)^{-1}f(x)d\mu_G(x).
+    \end{equation}
+    If $\tilde f = 0$ then $I(f) = 0$.
+\end{lemma}
+\begin{proof}
+    Suppose $f$ is fixed by $K$.
+    It suffices to check the case when $f$ is of the form $\sum_i\alpha_i1_{h_igK}$ for $\alpha_i\in \C$ and the $h_igK$ distinct cosets.
+    Then by the remark $\tilde f = 0$ implies that $\sum_i\alpha_i\delta_G(h_i)^{-1} = 0$.
+    But 
+    \begin{equation}
+        I(1_{h_igK}) = \delta_G(h_ig)^{-1}\mu_G(K)
+    \end{equation}
+    and so 
+    \begin{equation}
+        I(f) = \mu_G(K)\delta_G(g)^{-1}\sum_i\alpha_i\delta_G(h_i)^{-1} = 0.
+    \end{equation}
+\end{proof}
+\begin{thm}
+    Let $\theta:H\to \C^\times$ be a character of $H$.
+    The following are equivalent:
+    \begin{enumerate}
+        \item $\Hom_G((C_c^\infty(H\backslash G,\theta),\rho),\C) \ne 0$
+        \item $\theta\delta_H = \delta_G|_H$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    $(1)\Rightarrow (2)$ Let $0\ne I_\theta\in \Hom_G((C_c^\infty(H\backslash G,\theta),\rho),\C)$ be such that the right Haar integral $I:f\mapsto \int_G\delta_G(x)^{-1}f(x)d\mu_G(x)$ is equal to $I_\theta(\tilde f)$.
+    Note that elements of the form $\lambda_hf-(\theta\delta_H)(h)^{-1}f$ map to zero under $\sim$ and so we get
+    \begin{align}
+        0 = I(\lambda_hf-(\theta\delta_H)(h)^{-1}f) &= \int_G\delta_G(x)^{-1}(\lambda_hf-(\theta\delta_H)(h)^{-1}f)d\mu_G(x) \nonumber \\
+                                                    &= \left(\delta_G(h)^{-1}-(\theta\delta_H)(h)^{-1}\right)I(f).
+    \end{align}
+    Picking an $f$ such that $I(f)\ne 0$ we get that $\delta_G|_H = \theta\delta_H$.
+
+    $(2)\Rightarrow(1)$ By lemma \ref{lem:I_ker}, if $\tilde f = 0$ then $I(f) = 0$.
+    The result follows.
+\end{proof}
+\begin{corollary}
+    Suppose $\theta\delta_H = \delta_G|_H$.
+    Then there is a non-zero $I_\theta:(C_c^\infty(G),\rho)\to \C$ such that $I_\theta(f)\ge0$, whenever $f\ge0$.
+\end{corollary}
+\begin{definition}
+    If $H$ is a closed subgroup of $G$ define $\delta_{H\backslash G} = \delta_H^{-1}\delta_G|_H:H\to \R_+^\times$.
+    Write $\mu_{H\backslash G}$ for 
+    \begin{equation}
+        I_{\delta_{H\backslash G}}(f) = \int_{H\backslash G}f(g)d\mu_{H\backslash G}(g)
+    \end{equation}
+    where $f\in C_c^\infty(H\backslash G,\delta_{H\backslash G})$.
+\end{definition}
+\subsection{Duality theorem}
+Fix measures $\mu_G,\mu_H$ and write $\mu_{H\backslash G}$ for the corresponding semi-invariant measure on $H\backslash G$.
+\begin{proposition}
+    Let $W$ be a $H$-representation.
+    Given $\phi\in \cInd_H^GW,\Phi\in\sInd_H^G(\delta_{H\backslash G}\otimes \check W)$ define $f_{\Phi,\phi}:G\to \C$ by
+    \begin{equation}
+        f_{\Phi,\phi}(g) = \langle \Phi(g),\phi(g) \rangle.
+    \end{equation}
+    Then $f_{\Phi,\phi}$ lies in $C_c^\infty(H\backslash G,\delta_{H\backslash G})$.
+\end{proposition}
+\begin{proof}
+    We clearly have
+    \begin{equation}
+        f_{\Phi,\phi}(hg) = \delta_{H\backslash G}(h)f_{\Phi,\phi}(g), h\in H, g\in G.
+    \end{equation}
+    We also have $gf_{\Phi,\phi} = f_{g\phi,g\Phi}$.
+    Thus, if $K$ is a compact open subgroup that fixes both $\phi$ and $\Phi$ then $K$ also fixes $f_{\Phi,\phi}$.
+    Finally it remains to check that $f$ has compact support module $H$.
+    But $\supp(f_{\Phi,\phi})\subseteq \supp(\phi) = H\supp(\phi)$.
+\end{proof}
+\begin{remark}
+    Let $F = \sInd_H^G\circ(\delta_{H\backslash G}\otimes -)\circ \vee$ and $G = \cInd_H^G$.
+    If $h:V\to W$ is a homomorphism between $H$-representations then for $\phi\in G(V), \Phi\in F(W)$ we have
+    \begin{equation}
+        f_{F(h)\Phi,\phi}(g) = \langle \Phi(g)\circ h, \phi(g) \rangle = \langle \Phi(g), h\circ\phi(g) \rangle = f_{\Phi,G(h)\phi}(g).
+    \end{equation}
+\end{remark}
+\begin{definition}
+    Define the pairing
+    \begin{equation} 
+        (-,-)_W:\sInd_H^G(\delta_{H\backslash G}\otimes \check W)\times \cInd_H^GW\to \C
+    \end{equation}
+    by
+    \begin{equation}
+        (\Phi,\phi)_W \mapsto \int_{H\backslash G} f_{\Phi,\phi}d\mu_{H\backslash G}.
+    \end{equation}
+    This pairing is clearly $G$-invariant.
+    By the remark the induced map 
+    \begin{equation}
+        \sInd_H^G(\delta_{H\backslash G}\otimes \check W)\to (\cInd_H^GW)^\vee
+    \end{equation}
+    is natural in $W$.
+\end{definition}
+\begin{lemma}
+    Let $K$ be a compact open subset of $G$, $\mathcal G$ a set of representatives for $H\backslash G/K$, and for each $g\in \mathcal G$, let $\mathcal W_g$ be a basis for $W^{H\cap gKg^{-1}}$.
+    Then for each $g\in \mathcal G, w\in \mathcal W_g$ there is a unique $f_{g,w}$ with support $HgK$ and $f_{g,w}(g) = w$, and the collection of all of these form a basis for $(\cInd_H^GW)^K$.
+\end{lemma}
+\begin{proof}
+    It is clear that the $f_{g,w}$ exist and that they are linearly independent.
+    To see that they span $(\cInd_H^GW)^K$, note that if $f\in (\cInd_H^GW)^K$ then $\supp(f)$ is the union of finitely many double cosets of $H\backslash G/K$.
+    Noting that $f$ multiplies by the indicators on the various double cosets are still in $(\cInd_H^GW)^K$, we may thus reduce to the case when $\supp(f) = HgK$ for some $g\in \mathcal G$.
+    But note that $f(g) \in W^{H\cap g^Kg^{-1}}$.
+    Taking the appropriate linear combination of $f_{g,w}$'s gives the result.
+\end{proof}
+\begin{remark}
+    We have that 
+    \begin{equation}
+        (\delta_{H\backslash G}\otimes \check W)^{H\cap gKg^{-1}} = \check W^{H\cap gKg^{-1}} = \left(W^{H\cap gKg^{-1}}\right)^*
+    \end{equation}
+    since $\delta_{H\backslash G}$ is trivial on $H\cap gKg^{-1}$.
+    It follows that the dual basis of $\mathcal W_g$ give a basis for $(\delta_{H\backslash G}\otimes \check W)^{H\cap gKg^{-1}}$.
+    Write $f_{g,\check w}, g\in \mathcal G, w\in \mathcal W_g^*$ for the elements of $\sInd_H^G(\delta_{H\backslash G}\otimes W)$ that arise in the same way as in the lemma.
+    Then by a similar argument as above, $\sInd_H^G(\delta_{H\backslash G}\otimes W)$ consists of all functions $f$ such that $f|_{HgK}$ is a finite linear combination of $f_{g,\check w}$'s.
+
+    Note moreover that for $g\in \mathcal G, w\in \mathcal W_g,\check w\in \mathcal W_g^*$,
+    \begin{equation}
+        (f_{g,\check w},f_{g,w}) = \int_{H\backslash G}1_{HgK}\langle\check w,w\rangle d\mu_{H\backslash G} = \mu_{H\backslash G}(HgK)\langle \check w, w \rangle
+    \end{equation}
+    and 
+    \begin{equation}
+        (f_{g,\check w},f_{g',w}) = 0
+    \end{equation}
+    when $g'\in\mathcal G$ and $g\ne g'$.
+\end{remark}
+\begin{proposition}
+    The pairing $(-,-)$ is perfect.
+\end{proposition}
+\begin{proof}
+    It suffices to show that the induced map 
+    \begin{equation}
+        \sInd_H^G(\delta_{H\backslash G}\otimes \check W)^K\to ((\cInd_H^GW)^K)^*
+    \end{equation}
+    is an isomorphism for any compact open subgroup $K$ of $G$.
+    But this just follows from the remark.
+\end{proof}
+\begin{corollary}
+    There is a natural isomorphism
+    \begin{equation}
+        (\cInd_H^GW)^\vee \cong \sInd_H^G(\delta_{H\backslash G}\otimes \check W).
+    \end{equation}
+\end{corollary}
+\section{The Hecke Algebra}
+\begin{definition}
+    Let $f_1,f_2\in C_c^\infty(G)$ and define
+    \begin{equation}
+        f_1*f_2(g) = \int_Gf_1(x)f_2(x^{-1}g)d\mu_G(x).
+    \end{equation}
+\end{definition}
+\begin{lemma}
+    Let $f_1,f_2\in C_c^\infty(G)$.
+    Then the map $(x,g) \mapsto f_1(x)f_2(x^{-1}g)$ is in $C_c^\infty(G\times G)$.
+\end{lemma}
+\begin{proof}
+    Let $K$ be a compact open subgroup such that $\rho(K)$ fixes $f_1,f_2$ and $\lambda(K)$ fixes $f_2$.
+    Then for $k_1,k_2\in K$, $(xk_1,gk_2)\mapsto f_1(x)f_2(x^{-1}g)$ and so it is fixed by $K\times K$.
+    It remains to check that it has compact support.
+    But its support is
+    \begin{equation}
+        \set{(x,g): x\in \supp(f_1),g\in x\cdot \supp(f_2)}.
+    \end{equation}
+    This is the image of $\supp(f_1)\times \supp(f_2)$ under the homeomorphism $G\times G\to G\times G: (x,y)\mapsto (x,xy)$ and so is compact.
+\end{proof}
+\begin{proposition}
+    If $f_1,f_2\in C_c^\infty(G)$ then $f_1*f_2\in C_c^\infty(G)$.
+\end{proposition}
+\begin{proof}
+    Note that for a fixed $g\in G$ the map $x\mapsto f_1(x)f_2(x^{-1}g)$ is in $C_c^\infty(G)$ and so $f_1*f_2$ is defined everywhere.
+    Let $K$ be a compact open subgroup of $G$ such that $\rho(K)$ fixes $f_2.$
+    Then it is clear that $\rho(K)$ also fixes $f_1*f_2$.
+    To see that the support is compact note that $f_1*f_2(g) \ne 0$ only if $\supp(f_1)\cap g^{-1}\supp(f_2) \ne \emptyset$.
+    But $\supp(f_1)$ is compact and $\supp(f_2)$ is open and so only finitely many cosets of $\supp(f_2)$ can intersect $\supp(f_1)$.
+    Thus $\supp(f_1*f_2)$ is contained a finite union of cosets of $\supp(f_2)$ and so is compact.
+\end{proof}
+\begin{remark}
+    It is easy to check that $*$ is associative.
+\end{remark}
+\begin{definition}
+    The Hecke algebra of $G$ is $\mathcal H(G) = (C_c^\infty(G),*)$.
+    This is an associative algebra.
+
+    For a compact open subgroup $K$ of $G$ define $e_K := 1_K/\mu_G(K)$.
+\end{definition}
+\begin{remark}
+    $e_K$ is idempotent.
+\end{remark}
+\begin{remark}
+    For any $f\in C_c^\infty(G), k\in K, g\in G$ we have $e_K*f(kg) = e_K*f(g)$.
+    In other words, $e_K*f$ is fixed by $\lambda(K)$.
+    Similarly $f*e_K$ is fixed by $\rho(K)$.
+\end{remark}
+\begin{proposition}
+    Let $K$ be a compact open subgroup of $G$ and $f\in C_c^\infty(G)$.
+    Then $f$ is fixed by $\lambda(K)$ iff $e_K*f = f$.
+\end{proposition}
+\begin{proof}
+    It is clear that if $f$ is fixed by $\lambda(K)$ then $e_K*f(g) = f(g)$ for all $g\in G$.
+    Conversely, suppose $e_K*f = f$.
+    Then the result follows from the remark.
+\end{proof}
+\begin{remark}
+    Similarly $f$ is fixed by $\rho(K)$ iff $f*e_K = f$.
+\end{remark}
+\begin{corollary}
+    The space $\mathcal H(G,K) := e_K*\mathcal H(G)*e_K$ is a subalgebra of $\mathcal H(G)$, with unit $e_K$.
+\end{corollary}
+\begin{corollary}
+    \begin{equation}
+        \mathcal H(G,K) = \set{f\in \mathcal H(G): f(k_1gk_2) = f(g), g\in G,k_1,k_2\in K}.
+    \end{equation}
+\end{corollary}
+\begin{definition}
+    Let $M$ be a left $\mathcal H(G)$-module.
+    We say that $M$ is smooth if $\mathcal H(G)*M = M$.
+    Since $\mathcal H(G)$ is a union of the $\mathcal H(G,K)$ this is equivalent to saying for every $m\in M$ there is a compact open subgroup $K$ such that $e_K*m = m$.
+
+    Write $\mathcal H(G)-\sMod$ for the category of smooth $\mathcal H(G)$-modules.
+\end{definition}
+\begin{definition}
+    Let $(\pi,V)$ be a smooth $G$ representaion.
+    We can turn $V$ into a smooth $\mathcal H(G)$-module by defining for $f\in \mathcal H(G), v\in V$
+    \begin{equation}
+        \pi(f)v = \int_Gf(g)\pi(g)vd\mu_G(g).
+    \end{equation}
+\end{definition}
+\begin{remark}
+    Let $K$ be a compact open subgroup of $G$ such that $\rho(K)$ fixes $f$ and $K$ fixes $v$.
+    Then map $g\mapsto f(g)\pi(g)v$ is fixed by $\rho(K)$ and has compact support.
+    Thus the integral is defined and is equal to the finite sum
+    \begin{equation}
+        \sum_{g\in G/K}f(g)\pi(g)v.
+    \end{equation}
+    It is then clear that $\pi(e_K)v = v$ for $v\in V^K$.
+\end{remark}
+\begin{remark}
+    If $V = (C_c^\infty(G),\lambda)$ then the $\mathcal H(G)$-module action is given by $\lambda(\phi)f = \phi*f$.
+
+    If $V = (C_c^\infty(G),\rho)$ then the $\mathcal H(G)$-module action is given by $\rho(\phi)f = f*\check\phi$.
+\end{remark}
+\begin{proposition}
+    The above procedure defines a functor $\Smo_G\to \mathcal H(G)-\sMod$ which is the identity on morphisms.
+\end{proposition}
+\begin{proof}
+    It is easy to check that if $f_1,f_2\in C_c^\infty(G),v\in V$ then $\pi(f_1)(\pi(f_2)v) = \pi(f_1*f_2)v$.
+    Thus $V$ is a $\mathcal H(G)$-module.
+    By the remark, $V$ is moreover a smooth $\mathcal H(G)$-module.
+    It is clear that $G$-homomorphisms are also $\mathcal H(G)$-homomorphisms.
+\end{proof}
+\begin{lemma}
+    Let $M$ be a smooth $\mathcal H(G)$-module.
+    Then $\mathcal H(G) \otimes_{\mathcal H(G)}M \cong M$.
+\end{lemma}
+\begin{proof}
+    Let $\theta:\mathcal H(G)\otimes_{\mathcal H(G)} M \to M$ be the canonical map.
+    Suppose $\sum_if_i\otimes m_i$ is in the kernel.
+    Let $K$ be a compact open subgroup that fixes each of the $f_i$ by translation on both sides and is such that $m_i\in e_K*M$ for all $i$.
+    Then $e_K*m_i = m_i$ for all $i$ and so 
+    \begin{equation}
+        \sum_if_i\otimes m_i = e_K\otimes\sum_if_i*m_i = 0.
+    \end{equation}
+    Thus the map is injective.
+    But it is surjective by definition of smoothness.
+    Hence we have an isomorphism.
+\end{proof}
+\begin{corollary}
+    Let $M$ be a smooth $\mathcal H(G)$-module.
+    Then $M$ is naturally a $G$-representation.
+\end{corollary}
+\begin{proof}
+    $G$ acts on $\mathcal H(G)$ by left translation, and hence on $\mathcal H(G)\otimes_{\mathcal H(G)}M$.
+\end{proof}
+\begin{remark}
+    If $m\in M$ and $K$ is a compact open subgroup of $G$ such that $e_K*m = m$, then for $g\in G$, $gm = 1_{gK}*m/\mu_G(K)$.
+    But then for the induced $\mathcal H(G)$-module strucutre we have
+    \begin{equation}
+        \pi(1_{gK})m = \int_G1_{gK}(x)1_{xK}*md\mu_G(x)/\mu_G(K) = 1_{gK}*m.
+    \end{equation}
+    This suffices to show that the induces module strucutre is just the original module structure.
+\end{remark}
+\begin{corollary}
+    The above procedure defines a functor $\mathcal H(G)-\sMod \to \Smo_G$ which is the identity on morphisms.
+\end{corollary}
+\begin{remark}
+    Conversely if we start with a smooth $G$-representation $V$, then for $v\in V^K$ we have $gv = 1_{gK}*v/\mu_G(K) = \int_G1_{gK}(x)\pi(x)vd\mu_G(x)/\mu_G(K) = \pi(g)v$.
+    We thus have the following result.
+\end{remark}
+\begin{thm}
+    The functors $\Smo_G\to \mathcal H(G)-\sMod$ and $\mathcal H(G)-\sMod\to \Smo_G$ are mutually inverse.
+\end{thm}
+\begin{proposition}
+    Let $V$ be a smooth $G$-representation. 
+    Then the operator $e_K*$ is the projection onto $V^K$ along $V(K)$.
+    The space $V^K$ is an $\mathcal H(G,K)$-module on which $e_K$ acts as the identity.
+\end{proposition}
+\begin{proof}
+    Let $k\in K$ and $v\in V$. 
+    Then
+    \begin{equation}
+        k(e_K*v) = e_K*(kv) = e_K*v
+    \end{equation}
+    where the last equality follows from $\delta_G$ being trivial on $K$.
+    Thus $e_K$ is a $K$-homomorphism with image in $V^K$.
+    It follows that it must send $V(K)$ to $0$.
+    Moreover it is idempotent and the identity on $V^K$.
+    This gives the result.
+\end{proof}
+\begin{lemma}
+    Let $V$ be an irreducible smooth $G$-representation.
+    Then $V^K$ is either $0$ or a simple $\mathcal H(G,K)$-module.
+\end{lemma}
+\begin{proof}
+    Suppose $V^K\ne 0$. Then let $M$ be a non-zero $\mathcal H(G,K)$-submodule of $V$.
+    Then $\mathcal H(G)M = V$ by irreducibility and so 
+    \begin{equation}
+        V^K = e_K*V = e_K*\mathcal H(G) M = \mathcal H(G,K) M = M.
+    \end{equation}
+\end{proof}
+\begin{proposition}
+    \label{prop:bij}
+    The map $V\mapsto V^K$ induces a bijection between
+    \begin{enumerate}
+        \item equivalence classes of smooth representations of $G$ such that $V^K\ne 0$
+        \item equivalance classes of simple $\mathcal H(G,K)$-modules.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Let $M$ be a simple $\mathcal H(G,K)$-module and let $U = \mathcal H(G)\otimes_{\mathcal H(G,K)}M$.
+    Then $U^K = e_K*\mathcal H(G)\otimes_{\mathcal H(G,K)}M = e_K\otimes M \cong M$.
+    Let $X$ be a maximal $G$-subspace of $U$ such that $X^K=0$ (exists by Zorn).
+    This subspace is unique since $(X+X')^K = X^K+X'^K$.
+    Note that $X$ is maximal such that $X\cap U^K  = X\cap e_K\otimes M = 0$.
+    If $X\subsetneq W$ is a $G$-subspace of $U$ then $W$ must meet $e_K\otimes M$ and so must contain $e_K\otimes M$ (as $M$ is simple) and so must equal to $U$.
+    It follows that $V = U/X$ is irreducible and $V^K = M$ as $\mathcal H(G,K)$-modules.
+    Note that the isomorphism class of $V$ depends only on that of $M$.
+
+    Thus we now have maps going in both directions and we know that one composition is the identity.
+    To see that the other composition is the identity, let $V$ be an irreducible $G$-representation and $M = V^K$.
+    We have a map $U = \mathcal H(G)\otimes_{\mathcal H(G,K)}M \to V$, $f\otimes m \mapsto f*m$.
+    The image is non-zero sub-representation of $V$ and so the map must be surjective.
+    Moreover, the image of $X$ is a submodule that does not intersect $V^K$ and so must be zero.
+    Thus $X$ lies in the kernel of the map.
+    Now suppose $u$ lie in the both $U^K$ and the kernel of the map.
+    Then $u = e_K\otimes m$ some $m\in M$.
+    But then $e_K*m = 0$ and $e_K*m = m$ and so $e_K\otimes m = 0$.
+    Thus the kernel lies inside $X$.
+    It follows that $V\cong U/X$ as required.
+\end{proof}
+\begin{corollary}
+    Let $V$ be a smooth non-zero representation of $G$.
+    Then $V$ is irreducible iff for any open compact open subgroup $K$ of $G$, the space $V^K$ is either zero or $\mathcal H(G,K)$-simple.
+\end{corollary}
+\begin{proof}
+    $(\Rightarrow)$ Done.
+    $(\Leftarrow)$ Let $V$ a $G$-representation with a non-zero sub-representation $U$.
+    Let $W = V/U$ and $K$ be a compact open subgroup of $G$ such that $U^K, W^K \ne 0$.
+    Then $0\to U^K\to V^K\to W^K\to 0$ is exact and so $V^K$ is not a simple $\mathcal H(G,K)$-module.
+\end{proof}
+\begin{definition}
+    Let $(\rho,V) \in \hat K$ and define
+    \begin{equation}
+        e_V(x) = \frac{\dim V}{\mu_G(K)}\tr(\rho(x^{-1})) 1_K(x).
+    \end{equation}
+    Recall that since $K$ is compact, the kernel of $\rho$ is also a compact open subgroup $K'\le K$ such that $K/K'$ is finite.
+    It follows that $\rho$ is constant on double cosets $K'\backslash G/K'$ and so $e_{K'}*e_{\rho} = e_\rho*e_{K'} = e_\rho$.
+    Thus $e_\rho\in \mathcal H(K,K')\subseteq \mathcal H(G,K')$.
+\end{definition}
+\begin{proposition}
+    The map $\mathcal H(K,K')\to \C[K/K']$, $1_{gK'}/\mu_G(K')\mapsto gK'$ is an algebra isomorphism that respects their respective actions on $V$.
+\end{proposition}
+\begin{remark}
+    Under this isomorphism $e_V$ gets sent to the idempotent for $V$ is $\C[K/K']$.
+\end{remark}
+\begin{corollary}
+    \begin{enumerate}
+        \item The function $e_V\in \mathcal H(G)$ is idempotent.
+        \item If $W$ is a smooth $G$-representation of $G$, then $e_\rho$ is the $K$-projection $V\to V^\rho$.
+    \end{enumerate}
+\end{corollary}
+\begin{remark}
+    Replacing $V^K$ with $V^\rho$ and $\mathcal H(G,K)$ with $e_\rho*\mathcal H(G)*e_\rho$ we get an exact analogue of proposition \ref{prop:bij}.
+\end{remark}
+\end{document}
+
