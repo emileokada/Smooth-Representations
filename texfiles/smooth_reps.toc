@@ -16,14 +16,80 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Characters}{6}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Semisimplicity}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Semisimplicity}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Induction}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Induction}{8}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Irreducible representations and the contragredient}{9}{section.2.3}
+\contentsline {section}{\numberline {2.3}Irreducible representations and the contragredient}{10}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Measures}{10}{section.2.4}
+\contentsline {section}{\numberline {2.4}Measures}{11}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Duality theorem}{15}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Left invariant measures}{16}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}The Hecke Algebra}{17}{section.2.5}
+\contentsline {subsection}{\numberline {2.4.2}Relatively invariant measures}{17}{subsection.2.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Relatively invariant measures on quotient spaces}{18}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.3}Duality theorem}{18}{subsection.2.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}The Hecke Algebra}{20}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Intertwining}{24}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Irreducible representations of GL(2,F)}{29}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}GL(n,F)}{29}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Structure theory}{31}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Haar measures}{31}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Representations of Mirabolic Group}{33}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Jacquet functor}{35}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Irreducibility criterion}{37}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Classification of irreducible representations}{39}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.8}Cuspidal representations}{41}{section.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.9}Compact induction and cuspidal representations}{42}{section.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.9.1}Example}{42}{subsection.3.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Orbital Integrals and Nilpotent Orbits}{45}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Structure theory}{45}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Nilpotent orbits}{46}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Nilpotent elements and Jacobson-Morozov}{46}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Orbital integrals}{47}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.1}GL(n)}{50}{subsection.4.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Fourier transforms}{52}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Character distribution}{53}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.1}Elementrary Kirillov theory}{54}{subsection.4.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Homogeneity results}{54}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Generalised Gelfand-Garaev representations}{56}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.9}Fourier transforms of nilpotent orbital integrals on generalised Gelfand Graev characters}{57}{section.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{GL(2) example calculation}{58}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{GL(n) - Approach 1}{60}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Results on double cosets}{62}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Results on parabolic subgroups}{63}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{GL(n) - Approach 2}{63}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.9.1}Wave front sets}{64}{subsection.4.9.1}

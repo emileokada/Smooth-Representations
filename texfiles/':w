@@ -485,7 +485,7 @@
     $\delta_G$ is trivial on open compact subgroups of $G$.
 \end{proposition}
 \begin{proposition}
-    A homomorphism $\psi:G\to \R_+^\times$ is a character iff it is trivial on compact open subgroups.
+    A homomorphism $\psi:G\to R_+^\times$ is a character iff it is trivial on compact open subgroups.
 \end{proposition}
 \begin{corollary}
     $\delta_G$ is a character.
@@ -513,7 +513,7 @@
     Let $\mu_H$ be a left Haar measure on $H$.
     Define the map $\sim:(C_c^\infty(G),\rho)\to C_c^\infty(H\backslash G,\theta)$ by
     \begin{equation}
-        \tilde f(g) = \int_H (\theta\delta_H)^{-1}\rho_gfd\mu_H = \int_H\theta(h^{-1})f(hg)d\mu_H^R(h).
+        \tilde f(g) = \int_H (\theta\delta_H)^{-1}\rho_gfd\mu_H.
     \end{equation}
     This map is a $G$-homomorphism and 
     \begin{equation}
@@ -522,7 +522,6 @@
     for $f\in C_c^\infty(G),h\in H$.
 \end{definition}
 \begin{lemma}
-    \label{lem:t_surj}
     $\sim$ is surjective.
 \end{lemma}
 \begin{proof}
@@ -586,7 +585,7 @@
     The following are equivalent:
     \begin{enumerate}
         \item $\Hom_G((C_c^\infty(H\backslash G,\theta),\rho),\C) \ne 0$
-        \item $\delta_G|_H = \theta\delta_H$.
+        \item $\theta\delta_H = \delta_G|_H$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -618,129 +617,21 @@
     Let $f\in C_c^\infty(H\backslash G,\delta_{H\backslash G})$.
     If $f$ is fixed by the compact open subgroup $K$ of $G$ then
     \begin{equation}
-        \int_{H\backslash G}f(g)d\mu_{H\backslash G}(g) = \sum_{g\in H\backslash G/K}\frac{\mu_G(^gK)}{\mu_H(H\cap\phantom{ } ^gK)}f(g)
+        \int_{H\backslash G}f(g)d\mu_{H\backslash G}(g) = \sum_{g\in H\backslash G/K}\frac{\mu_G(K^g)}{\mu_H(H\cap K^g)}f(g)
     \end{equation}
-    where $^gK = gKg^{-1}$.
+    where $K^g = gKg^{-1}$.
 \end{proposition}
 \begin{proof}
     Suppose $\supp(f)\subseteq HgK$.
-    Write $^gH = H\cap \phantom{ } ^gK$.
+    Write $H^g = H\cap K^g$.
     Then $f = \tilde h$ where $h=c1_{gK}$ for some constant $c$.
-    Thus $f(g) = \tilde h(g) = c\mu_H(^gH)$ and so $c = f(g)/\mu_H(^gH)$.
+    Thus $f(g) = \tilde h(g) = c\mu_H(H^g)$ and so $c = f(g)/\mu_H(H^g)$.
     But 
     \begin{equation}
-        I_{\delta_{H\backslash G}}(f) = I(h) = \int_G\delta_G(x)^{-1}c1_{gK}(x)d\mu_G(x) = \frac{\mu_G(K)f(g)}{\mu_H(^gH)\delta_G(g)}.
+        I_{\delta_{H\backslash G}}(f) = I(h) = \int_G\delta_G(x)^{-1}c1_{gK}(x)d\mu_G(x) = \frac{\mu_G(K)f(g)}{\mu_H(H^g)\delta_G(g)}.
     \end{equation}
-    The result follows from $\mu_G(K)/\delta_G(g) = \mu_G(^gK)$.
+    The result follows from $\mu_G(K)/\delta_G(g) = \mu_G(K^g)$.
 \end{proof}
-\subsection{Left invariant measures}
-\begin{remark}
-    For $f\in C_c^\infty(G)$ and $g\in G$ we have $\delta_G(g)I(\lambda_gf) = I(f)$.
-\end{remark}
-\begin{definition}
-    Write $\int d\mu_H^R$ for $I$.
-    Let $\theta:H\to \C^\times$ be a character and define $C_c^\infty(G/H,\theta)$ in the obvious way.
-    Define $\delta_G^R:G\to \C^\times$ by $\delta_G^R = \delta_G^{-1}$.
-\end{definition}
-\begin{definition}
-    Define the map $\sim: (C_c^\infty(G),\lambda)\to C_c^\infty(G/H,\theta)$ by
-    \begin{equation}
-        \tilde f(g) = \int_H(\theta\delta_H^R)^{-1}\lambda_{g^{-1}}fd\mu_H^R = \int_H\theta^{-1}\lambda_{g^{-1}}fd\mu_H.
-    \end{equation}
-    This map is a $G$-homomorphism and
-    \begin{equation}
-        \widetilde{\rho_hf} = (\theta\delta_H^R)(h)\tilde f
-    \end{equation}
-    for $f\in C_c^\infty(G)$ and $h\in H$.
-\end{definition}
-\begin{remark}
-    Let $\theta:H\to \C^\times$ be a character of $H$, $K$ a compact open subgroup of $G$ and $g\in G$.
-    Suppose $\delta_G^R|_H = \theta \delta_H^R$.
-    Then
-    \begin{equation}
-        \widetilde{1_{Kg}}(kgh) = \theta(h)\mu_H(H\cap g^{-1}Kg)
-    \end{equation}
-    and $\widetilde{1_{Kg}}$ is $0$ outside of $KgH$.
-\end{remark}
-\begin{thm}
-    Let $\theta:H\to \C^\times$ be a character of $H$. The following are equivalent:
-    \begin{enumerate}
-        \item $\Hom_G((C_c^\infty(G/H,\theta),\lambda),\C) \ne 0$
-        \item $\delta_G^R|_H = \theta \delta_H^R$.
-    \end{enumerate}
-\end{thm}
-\begin{proposition}
-    \label{prop:left_semi_inv}
-    Let $f\in C_c^\infty(G/H,\delta_{G/H})$.
-    If $f$ is fixed by the compact open subgroup $K$ of $G$ then
-    \begin{equation}
-        \int_{G/H}f(g)d\mu_{G/H}(g) = \sum_{g\in K\backslash G/H}\frac{\mu_G(K^g)}{\mu_H(H\cap K^g)}f(g)
-    \end{equation}
-    where $K^g = g^{-1}Kg$.
-\end{proposition}
-\begin{proof}
-    Identical to the proof of proposition \ref{prop:semi_inv_eq}.
-\end{proof}
-\subsection{Relatively invariant measures}
-\begin{definition}
-    A measure $\eta$ on $G$ is said to be relatively invariant with left multiplier $\chi_l$ and right multiplier $\chi_r$ if for $f\in C_c^\infty(G)$
-    \begin{equation}
-        \eta(\lambda_gf) = \chi_l(g)\eta(f),\quad \eta(\rho_gf) = \chi_r(g)\eta(f).
-    \end{equation}
-    We say that $\eta$ is relatively left (resp. right) invariant if it satisfies the respective condition above.
-\end{definition}
-\begin{proposition}
-    The multipliers $\chi_l,\chi_r$ are characters $G\to \R_+^\times$.
-\end{proposition}
-\begin{proof}
-    They are both clearly homomorphisms from $G$ to $\R_+^\times$.
-    It thus suffices to show that they are trivial on compact open subgroups of $G$.
-    But this is obvious.
-\end{proof}
-\begin{proposition}
-    Let $\chi:G\to \R_+^\times$ be a character.
-    Then the measure $\eta:C_c^\infty(G)\to \R_{\ge 0}$ defined by
-    \begin{equation}
-        \label{eq:rel_meas}
-        \eta(f) = \int_G f(g)\chi(g)d\mu(g)
-    \end{equation}
-    satisfies $\eta(\lambda_g f) = \chi(g)\eta(f)$.
-    Conversely if $\eta$ is a measure that satisfies $\eta(\lambda_g f) = \chi(g)\eta(f)$ then there is a unique left Haar measure $\mu$ so that $\eta$ may be expressed as in equation \ref{eq:rel_meas}.
-\end{proposition}
-\begin{proof}
-    Obvious.
-\end{proof}
-\begin{corollary}
-    If $\eta$ is relatively left invariant, then it is relatively invariant with $\chi_r = (\chi_l\delta_G)^{-1}$.
-\end{corollary}
-\begin{corollary}
-    If $\eta$ is realtively invariant, then $\chi_l\chi_r\delta_G = 1$.
-\end{corollary}
-\begin{corollary}
-    The space of relatively left invariant measures with muliplier $\chi$ is one dimensional.
-\end{corollary}
-\subsubsection{Relatively invariant measures on quotient spaces}
-Let $X$ be a locally compact toplogical space and let $H$ be a locally compact group acting properly on $X$ on the right.
-If $\chi: H \to \R_+^\times$ is a character of $H$ and $\mu_X$ a measure on $X$ we say that $\mu_X$ is relatively invariant with multiplier $\chi$ if $\mu_X(\rho_{h^{-1}} f) = \chi(h) \mu_X(f)$ for all $f\in C_c^\infty(X)$.
-\begin{definition}
-    For $f\in C_c(X)$ define
-    \begin{equation}
-        f^1(x) = \int_Hf(xh)d\mu_H(h).
-    \end{equation}
-    It is clear that this function factors through the projection map $\pi:X\to X/H$.
-    Let $f^b:X/H\to \C$ denote the map so that $f^1 = f^b\circ \pi$.
-    The map $f\mapsto f^b$ is surjective and its kernel is contained in the kernel of $\mu_X$.
-    Thus we can define a measure $\mu_X^b$ on $X/H$ by $\mu_X^b(g) = \mu_X(f)$ where $f$ is such that $f^b = g$.
-\end{definition}
-\begin{thm}
-    Let the locally compact group $H$ act propoerly on the right of a locally compact space $X$ and let $\mu_H$ be a given measure on $H$.
-    Then given a relatively invariant measure on $X$ with multiplier $\chi$ there exists a unique measure $\mu_{X/H}$ that has the property
-    \begin{equation}
-        \mu_X(f) = \mu_{X/H}(f^b)
-    \end{equation}
-    iff $\chi = \delta_H$.
-    If this condition is satisfied, then $\mu_{X/H}$ is given by $\mu_X^b$.
-\end{thm}
 \subsection{Duality theorem}
 Fix measures $\mu_G,\mu_H$ and write $\mu_{H\backslash G}$ for the corresponding semi-invariant measure on $H\backslash G$.
 \begin{proposition}
@@ -1291,51 +1182,7 @@ Fix measures $\mu_G,\mu_H$ and write $\mu_{H\backslash G}$ for the corresponding
     It follows that $FL = V$.
     Now choose a basis $x_1,\dots,x_n$ of $V$ and consider the projection maps $\pi_i:V\to Fx_i$.
     Then $\pi_i(L)$ is a compact open subgroup of $F$ and so is contained in some $\mf p^{n_i}x_i$.
-    Thus $L\subseteq \oplus_i\mf p^{n_i}x_i$.
-\end{proof}
-\begin{corollary}
-    If $V$ is both a lattice and an $\mf o$-module then $V$ is an $\mf o$-lattice.
-\end{corollary}
-\begin{proof}
-    Consider the ses $0 \to L_1 \to L \to L/L_1 \to 0$ and note that $L/L_1$ is finite and hence a f.g. $\mf o$-module.
-\end{proof}
-\begin{definition}
-    Suppose that $V$ has a nondegenerate symmetric bilinear form $\langle -,- \rangle:V\times V\to \C$.
-    Then given  a lattice $L$ we define its dual to be 
-    \begin{equation}
-        L^* = \set{x \in V :\langle x,y\rangle \in \mf o, \forall y\in L}.
-    \end{equation}
-\end{definition}
-\begin{remark}
-    If $L_1\subseteq L_2$ then $L_2^* \subseteq L_1^*$.
-\end{remark}
-\begin{proposition}
-    If $L$ is an $\mf o$-lattice with basis $x_1,\dots,x_n$ then $L^* = \bigoplus_i \mf o y_i$ where $y_i\in V$ is such that $\langle x_i,y_j\rangle = \delta_{ij}$ for all $i,j$.
-\end{proposition}
-\begin{corollary}
-    If $L$ is an $\mf o$-lattice then $L^{**} = L$.
-\end{corollary}
-\begin{corollary}
-    If $L$ is a lattice then $L^*$ is a lattice.
-\end{corollary}
-\begin{corollary}
-    If $L_1 \subseteq L_2$ are $\mf o$-lattices then $\abs{L_2:L_1} = \abs{L_1^*:L_2^*}$.
-\end{corollary}
-\begin{remark}
-    It follows that $\mu(L)\mu(L^*)$ is a constant independent of $L$.
-\end{remark}
-\begin{corollary}
-    If $L$ is an $\mf o$-lattice then $\widehat{1_{L}} = \mu(L)1_{L^*}$.
-\end{corollary}
-\begin{proposition}
-    Let $L$ be an $\mf o$-lattice of $V$ and $W\subseteq V$ a vector subspace.
-    Then $L\cap W$ is an $\mf o$-lattice of $W$.
-\end{proposition}
-\begin{proof}
-    $L\cap W$ is clearly an open $\mf o$-submodule of $W$ and $F(L\cap W) = W$.
-    Now let $\pi:V\to W$ be a projection map onto $W$.
-    Then $L\cap W\subseteq \pi(L)$ and so is a closed subset of a compact subset and is hence itself compact.
-    It follows that $L\cap W$ is a lattice and $\mf o$-submodule of $W$ and so is an $\mf o$-lattice.
+    Thus $L\subseteq \oplus_i\mf p^{n_i}$.
 \end{proof}
 \section{Structure theory}
 \begin{proposition}
@@ -1403,17 +1250,6 @@ Fix measures $\mu_G,\mu_H$ and write $\mu_{H\backslash G}$ for the corresponding
     The functional $\Phi\mapsto \int_{G}\Phi(x)\abs{\det x}^{-2}d\mu(x)$ for $\Phi\in C_c^\infty(G)$ is a left and right Haar integral on $G$.
     In particular, $G$ is unimodular.
 \end{proposition}
-\begin{proposition}
-    Let $V$ be a finite dimensional $F$-vector space and $\alpha\in \End(V)$.
-    Then for $f\in C_c^\infty(V)$
-    \begin{equation}
-        \int_V f(\alpha(v)) dv = \abs{\det(\alpha)}^{-1} \int_V f(v)dv.
-    \end{equation}
-\end{proposition}
-\begin{proof}
-    It is easy to see that $\int_V \circ \ \alpha^*$ is a Haar measure on $V$ and so there is a constant $c_\alpha$ such that $\int_V\circ \ \alpha^* = c_\alpha\cdot \int_V$.
-    Etc.
-\end{proof}
 \begin{definition}
     We have that $B = T\ltimes N$ and so $C_c^\infty(B) \cong C_c^\infty(T)\otimes_\C C_c^\infty(N)$.
     Define the linear functional 
@@ -2041,6 +1877,8 @@ Let $G = \GL_2(F)$, $K = \GL_2(\mf o)$, $K_1 = 1+\mf p M_2(\mf o)$ and $I_1 = 1 
         T_r &= \set{t\in T_0:\nu(1-\chi(t)) \ge r, \forall\chi\in X^*(T)} \nonumber \\
             &= \set{t\in T_0 : t_j \in 1+\bar w^{\lceil r\rceil}.R, 1\le j \le n}.
     \end{align}
+
+    Similarly define
     \begin{equation}
         \mf t_r = \set{t : t_j \in \bar w^{\lceil r\rceil}.R, 1\le j \le n}.
     \end{equation}
@@ -2049,14 +1887,18 @@ Let $G = \GL_2(F)$, $K = \GL_2(\mf o)$, $K_1 = 1+\mf p M_2(\mf o)$ and $I_1 = 1 
     \begin{equation}
         \mf g_{x,r} = \mf t_r \oplus \sum_{\psi\in\Psi:\psi(x)\ge r}\mf g_\psi
     \end{equation}
+    and
     \begin{equation}
-        \mf g_{x,r^+} = \mf t_r \oplus \sum_{\psi\in\Psi:\psi(x)> r}\mf g_\psi
+        \mf g_{x,r^+} = \mf t_r \oplus \sum_{\psi\in\Psi:\psi(x)> r}\mf g_\psi.
     \end{equation}
+
+    Similarly define
     \begin{equation}
         G_{x,r} = \langle T_r, U_\psi\rangle_{\phi\in\Psi:\psi(x)\ge r}
     \end{equation}
+    and
     \begin{equation}
-        G_{x,r^+} = \langle T_r, U_\psi\rangle_{\phi\in\Psi:\psi(x)> r}.
+        G_{x,r^+} = \langle T_r, U_\psi\rangle_{\phi\in\Psi:\psi(x)> r}
     \end{equation}
 \end{definition}
 \begin{remark}
@@ -2072,12 +1914,10 @@ Let $G = \GL_2(F)$, $K = \GL_2(\mf o)$, $K_1 = 1+\mf p M_2(\mf o)$ and $I_1 = 1 
 \end{lemma}
 \begin{definition}
     Let $r\in \R$.
-    Define $\mf g_r = \cup_{x\in \mathcal B} \mf g_{x,r}$.
-    We have
+    Define
     \begin{equation}
-        \mf g_r = \set{X\in \mf g: \nu(e_X)\ge r \text{ for all eigenvalues $e_X$ of $X$}}
+        \mf g_r = \cup_{x\in \mathcal B} \mf g_{x,r}.
     \end{equation}
-    and $\mathcal N = \bigcap_r \mf g_r$.
 \end{definition}
 \begin{definition}
     A $G$-domain of $\mf g$ is an invariant clopen subset of $\mf g$.
@@ -2092,293 +1932,39 @@ Let $G = \GL_2(F)$, $K = \GL_2(\mf o)$, $K_1 = 1+\mf p M_2(\mf o)$ and $I_1 = 1 
 \begin{corollary}
     $\mf g_r$ is a $G$-domain.
 \end{corollary}
-\section{Nilpotent orbits}
-\begin{definition}
-    Let $Z\in \mathcal N$ and $s\in \R$.
-    Define
-    \begin{equation}
-        \mathcal B(Z,s) = \set{z\in \mathcal B(G) : Z\in \mf g_{z,s}}.
-    \end{equation}
-    This is a nonempty and convex subset of $\mathcal B(G)$.
-    In fact it is a union of generalised $s$-facets (what are these?).
-\end{definition}
-\begin{lemma}
-    $\mathcal B(Z,S)$ is closed.
-\end{lemma}
-\begin{definition}
-    \begin{equation}
-        \mathcal B(Y,H,X) = \mathcal B(X,r) \cap \mathcal B(Y,-r).
-    \end{equation}
-    This set is a nonempty, closed and convex subset of $\mathcal B(G)$ and is a union of generalised $r$-facets.
-\end{definition}
-\begin{thm}
-    Fix $X\in \mathcal N\backslash \set{0}$ and suppose $(Y,H,X)$ is an $\mf{sl}_2$ triple in $\mf g$.
-    Let $\lambda \in X_*^k(G)$ be adapted to $(Y,H,X)$ and fix $x\in \mathcal B(Y,H,X)$.
-    Under appropriate hypotheses we have that
-    \begin{equation}
-        ^{G_{x,0^+}}(X + C_{\mf g_{x,r^+}}) = X + \mf g_{x,r^+}.
-    \end{equation}
-\end{thm}
-\section{Nilpotent elements and Jacobson-Morozov}
-In this section we outline some results and notation associated to nilpotent elements in semisimple Lie algebras.
-\begin{thm}
-    (Jacobson-Morozov) Let $e$ be a nilpotent element in a semisimple Lie algebra $\mf g$.
-    Then $e$ can be included in an $\lsl_2$-triple $\set{e,h,f}$ and all such $\lsl_2$-triples are conjugate by an element of $Z_G(e)$.
-\end{thm}
-
-Now, given a nilpotent element $e$ and an $\lsl_2$-triple $\set{e,h,f}$ containing $e$ we define the following objects:
-\begin{enumerate}
-    \item Let $\mf g_\lambda$ denote the $\lambda$ weight space of the adjoint action of the $\lsl_2$ subalgebra $\langle e,h,f\rangle$ on $\mf g$,
-    \item $\mf p_0 = \bigoplus_{\lambda\ge 0}\mf g_\lambda$ and $P_0$ the parabolic subgroup of $G$ with Lie algebra $\mf p_0$,
-    \item $\mf n_\lambda = \bigoplus_{\mu> \lambda}\mf g_\mu$,
-    \item $N_0$ the unipotent radical of $P_0$ (with Lie algebra $\mf n_0$),
-    \item $M_0$ the centraliser of $h$ in $G$,
-    \item $V_0 = \Ad(M_0)\cdot X_0$.
-\end{enumerate}
-Then $P_0 = M_0\cdot N_0$ is the Levi decomposition of $P_0$, and $V_0$ is open in $\mf g_2$.
-
-When $\mf g = \mf{gl}_n$ we additionally the following objects:
-\begin{enumerate}
-    \item Let $l$ be so that $e^l = 0 \ne e^{l-1}$ and set $V_i = \ker e^i$,
-    \item $\shf P = \set{p\in\mf g: p(V_i)\subseteq V_i}$, $P$ the subgroup of $G$ with lie algebra  $\shf P$,
-    \item $\shf U = \set{u\in\mf g: u(V_i)\subseteq V_{i-1}}$, $U$ the subgroup of $G$ with lie algebra  $\shf U$,
-    \item $\shf U^{(2)} = \set{u\in\mf g: u(V_i)\subseteq V_{i-2}}$.
-\end{enumerate}
-The following results hold.
-\begin{proposition}
-    \begin{enumerate}
-        \item $\ker \ad (e) \subseteq \shf P$,
-        \item $\ad (e)$ is surjective from $\shf P\to \shf U$ and from $\shf U\to \shf U^{(2)}$,
-        \item If $\ad (e)(x)\in \shf U$ then $x\in \shf P$,
-        \item If $\Ad (g)(e)\in \shf U$ then $g\in P$,
-        \item $\Ad(P)(e)$ is dense in $\shf U$. The complement of $\Ad(P)(e)$ in $\shf U$ is a proper closed subvariety of $\shf U$.
-    \end{enumerate}
-\end{proposition}
-\section{Orbital integrals}
-Let $\textbf{G}$ be a connected reductive linear algebraic group defined ovr a (non-dicrete) locally compact field $k$ of characterstic zero, and let $G$ be its group of $k$-rational points.
-Let $\mathcal O(x)$ denote the conjugacy class of $x\in G$ and $dy^*$ denote the invariant measure on $G/G_x$.
-We wish to show that for $f\in C_c^\infty(\mf g)$ and $x$ nilpotent 
-\begin{equation}
-    \int_{G/G_x}f(yxy^{-1})dy^*
-\end{equation}
-converges and hence that $f\mapsto \int_{G/G_x}f(yxy^{-1})dy^*$ defines a distribution on $\mf g$.
-
-\begin{lemma}
-    The $N_0$-orbit of $X_0$ is $X_0+\mf n_2$  and $\Ad(P_0)\cdot(X_0)$, the $P_0$-orbit of $X_0$, is $V_0+\mf n_2$.
-\end{lemma}
-\begin{proof}
-    $(\subseteq)$ Since $[X_0,\mf n_0] \subseteq \mf n_2$ it follows that $Ad(N_0)\cdot X_0 \subseteq X_0 + \mf n_2$.
-    $(\supseteq)$ First note that $[\mf n_i,\mf n_j] \subseteq \mf n_{i+j}$ and that $\cdots \supseteq \mf n_{-1} \supseteq \mf n_0 \supseteq \mf n_1 \supseteq \cdots$.
-    Now let $Y\in \mf n_2$.
-    We wish to show that $X_0 + Y \in \Ad(N_0)\cdot X_0$.
-    To do this we construct a sequence $Z_s\in \mf n_2, s\ge 2$ such that $Y-Z_s\in \mf n_s$ and $X_0 + Z_s \in \Ad(N_0)\cdot X_0$.
-    The existence of such a sequence is sufficient since $\mf g$ is finite dimensional and so there must exist an $n$ sufficiently large so that $\mf g_n = 0$ and hence that $Z_n = Y$.
-    By construction of the sequence we then get that $X_0+Y = X_0+Z_n \in \Ad(N_0)\cdot X_0$ as required.
-
-    We now construct such a sequence.
-    Let $Z_2 = 0$ and suppose $Z_s$ has been defined.
-    Let $Y' \in \mf g_{s+1}$ be such that $Y-Z_s \in Y' + \mf n_{s+1}$.
-    Since $s\ge 2$, it follows from basic $\lsl_2$ representation theory that $\ad(X_0)$ surjects $\mf g_{s-1}$ onto $\mf g_{s+1}$.
-    Thus there exists a $Z\in \mf g_{s-1}$ such that $\ad(X_0)(Z) = -Y'$.
-    It then follows that
-    \begin{equation}
-        \Ad(\exp(Z))\cdot(X_0+Z_s) = X_0 + Z_s + \ad(Z)(X_0) + W = X_0 + Z_s + Y' + W
-    \end{equation}
-    where $W \in \mf n_{s+1}$.
-    Let $Z_{s+1} = Z_s + Y' + W$. 
-    Then 
-    \begin{equation}
-        Z_{s+1} \equiv Z_s + Y' \equiv Y \pmod{\mf n_{s+1}}.
-    \end{equation}
-    It follows that $Z_{s+1}$ has the required properties and so we have the required sequence.
-
-    The last statement follows immediately.
-\end{proof}
-
-\begin{lemma}
-    Let $B(,)$ be a non-degenerate $G$-invariant bilinear form.
-    \label{lem:phi}
-    Let $Z_1,Z_2,\dots,Z_r$ and $Z_1',Z_2',\dots,Z_r'$ be bases for $\mf g_1$ and $\mf g_{-1}$ respectively such that $B(Z_i,Z_j') = \delta_{ij}$. 
-    For $X\in \mf g_2$, let $[X,Z_i'] = \sum_jc_{ji}(X)Z_j$ and $\phi(X) = \abs{\det(c_{ij}(X))}^{1/2}$.
-    then $\phi(X_0)>0$ and
-    \begin{equation}
-        \phi(\Ad(m)\cdot(X)) = \abs{\det(\Ad(m)|_{\mf g_1})}\phi(X)
-    \end{equation}
-    for all $X\in \mf g_2$ and $m\in M_0$.
-\end{lemma}
-\begin{proof}
-    By elementary $\lsl_2$ representation theory the map $\ad(X_0):\mf g_{-1}\to \mf g_1$ is surjective.
-    Since they have equal dimension it follows that $\phi(X_0) > 0$.
-
-    For $m\in M_0$ let 
-    \begin{align}
-        \Ad(m)\cdot Z_i &= \sum_j a_{ji}(m)Z_j \\
-        \Ad(m)\cdot Z_i' &= \sum_j b_{ji}(m)Z_j',
-    \end{align}
-    and $A(m) = (a_{ij}(m)), B(m) = (b_{ij}(m)), C(X) = (c_{ij}(X))$.
-    Since $B$ is $G$ invariant we get that
-    \begin{equation}
-        a_{ji}(m) = B(\Ad(m)\cdot Z_i, Z_j') = B(Z_i, \Ad(m^{-1})\cdot Z_j') = b_{ij}(m^{-1})
-    \end{equation}
-    and so $A(m) = B(m^{-1})^t$.
-    Moreover $\ad(\Ad(m)\cdot X) = \Ad(m)\cdot \ad(x) \cdot \Ad(m^{-1})$ and so 
-    \begin{equation}
-        C(\Ad(m)\cdot X) = A(m) \cdot C(X) \cdot A(m)^t.
-    \end{equation}
-    Since $A(m)$ represents the map $\Ad(m)|_{\mf g_1}$ with respect to the basis $Z_1,\dots,Z_r$, the result follows.
-\end{proof}
-
-\begin{lemma}
-    Let
-    \begin{equation}
-        \Lambda(f) = \int_{V_0 + \mf n_2} \phi(X) f(X+Z)dXdZ.
-    \end{equation}
-    Then there is a constant $c$ such that for all $f\in C_c^\infty(V_0+\mf n_2)$,
-    \begin{equation}
-        \Lambda(f) = c\int_{P_0/G_0} f(\Ad(p)\cdot X_0)dp^*.
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    Let $q\in P_0$, $q = mn$ with $m\in M_0,n\in N_0$ and define $f^q(Y) = f(\Ad(q)^{-1}\cdot Y)$,
-    \begin{align}
-        \delta_1(q) &= \abs{\det(\Ad(m)|_{\mf n_2})} = \abs{\det(\Ad(q)|_{\mf n_2})}, \\
-        \delta_2(q) &= \abs{\det(\Ad(m)|_{\mf g_2})}, \\
-        \delta_3(q) &= \abs{\det(\Ad(m)|_{\mf g_1})}.
-    \end{align}
-    Then
-    \begin{align}
-        \Lambda(f^q) &= \int_{V_0}\phi(X)dX\int_{\mf n_2}f^{q}(X+Z)dZ \nonumber \\
-                     &= \delta_1(q)\int_{V_0}\phi(X)dX\int_{\mf n_2}f(\Ad(q)^{-1}\cdot X+Z)dZ.
-    \end{align}
-    But $\Ad(q)^{-1}\cdot X = \Ad(m)^{-1}\cdot X + Z'$ for some $Z'\in \mf n_2$ and so 
-    \begin{align}
-        \Lambda(f^q) &= \delta_1(q)\int_{V_0}\phi(X)dX\int_{\mf n_2}f(\Ad(m)^{-1}\cdot X+Z)dZ \nonumber \\
-                     &= \delta_1(q)\int_{\mf n_2}dZ\int_{V_0}f(\Ad(m)^{-1}\cdot X+Z)\phi(X)dX \nonumber \\
-                     &= \delta_1(q)\delta_2(m)\int_{\mf n_2}dZ\int_{V_0}f(X+Z)\phi(\Ad(m) \cdot X)dX \nonumber \\
-                     &= \delta_1(q)\delta_2(m)\delta_3(m)\Lambda(f)
-    \end{align}
-    where we use the fact that $\phi(\Ad(m) \cdot X) = \delta_3(m)\phi(X)$ for the last equality.
-    But $\delta_1(q)\delta_2(q)\delta_3(q) = \Delta_{P_0}(q)^{-1}$ and so $\Lambda$ is a relatively invariant measure with the same multiplier as 
-    \begin{equation}
-        f\mapsto \int_{P_0/G_0}f(\Ad(p)\cdot X_0) dp^*.
-    \end{equation}
-    It follows that they are proportional.
-\end{proof}
-\begin{lemma}
-    \label{lem:prod}
-    There exists a constant $c$ such that for all $f\in C_c^\infty(G/G_0)$,
-    \begin{equation}
-        \int_{G/G_0}f(x^*)dx^* = c \int_{K\times P_0/G_0} f(up^*)dudp^*.
-    \end{equation}
-\end{lemma}
-
-\begin{thm}
-    There exists a constant $c$ such that for all $f\in C_c^\infty(\mf g)$
-    \begin{equation}
-        \int_{G/G_0} f(\Ad(x)\cdot X_0 )dx^* = c\int_{V_0+\mf n_2} \phi(X)\bar f(X+Z)dXdZ
-    \end{equation}
-    where $\phi$ is as defined in lemma \ref{lem:phi}, and $dX$ and $dZ$ are Haar measures on the vector spaces $\mf g_2$ and $\mf n_2$ respectively and 
-    \begin{equation}
-        \bar f(Y) = \int_K f(\Ad(u)\cdot Y ) du.
-    \end{equation}
-    In particular the nilpotent orbital integral converges and hence defines a distribution on $\mf g$.
-\end{thm}
-\begin{proof}
-    By combining the previous two lemmas we get that for all $f\in C_c^\infty(\mf g)$
-    \begin{align}
-        \int_{G/G_0}f(\Ad(x)\cdot X_0)dx^* &= \int_{K\times P_0/G_0}f(\Ad(up^*)\cdot X_0)dudp^* \nonumber \\
-                                           &= \int_{P_0/G_0} \bar f(p^*)dp^* \nonumber \\
-                                           &= c' \int_{V_0+\mf n_2} \phi(X)\bar f(X+Z) dXdZ.
-    \end{align}
-\end{proof}
-
-\subsection{GL(n)}
-\begin{lemma}
-    The map $\beta: C_c^\infty(G/P,\delta_P) \to \C$ given by $f\mapsto \int_Kfdk$ is a $G$-homomorphism.
-\end{lemma}
-\begin{proof}
-    Define the map $\alpha: C_c^\infty(G) \to C_c^\infty(G/P,\delta_P)$ by 
-    \begin{equation}
-        \alpha(f)(g) = \int_P f(gp)d\mu_P^R(p).
-    \end{equation}
-    Then $\alpha(f)(gp_0) = \delta_P(p_0) \alpha(f)(g)$ and so $\alpha(f)\in C_c^\infty(G/P,\delta_P)$ and $\alpha$ is clearly a $G$-homomorphism.
-    By a similar argument as in lemma \ref{lem:t_surj}, $\alpha$ is surjective. 
-    But $\beta(\alpha(f)) = \int_G fd\mu_G$ is a $G$-homomorphism.
-    It follows that $\beta$ must also be a $G$-homomorphism.
-\end{proof}
 \begin{remark}
-    If $P$ is a parabolic subgroup of $G$ then there is a compact open subgroup $K$ of $G$ such that $G = K.P$ and so $C_c^\infty(G/P,\delta_P) = C^\infty(G/P,\delta_P)$ since $G/P \cong K/K\cap P$ is compact.
+    \begin{equation}
+        \mf g_r = \set{X\in \mf g: \nu(e_X)\ge r \text{ for all eigenvalues $e_X$ of $X$}}
+    \end{equation}
+    and
+    \begin{equation}
+        \mathcal N = \bigcap_r \mf g_r.
+    \end{equation}
 \end{remark}
-
-\begin{lemma}
-    Let $P_0$ be the stabiliser of $X_0$ under the adjoint action of $P$ on $\shf U$ and $U = \Ad(P)X_0$.
-    Then the orbit map $P/P_0\to U$ which sends $pP_0$ to $\Ad(p)X_0$ is a $P$-equivariant homeomorphism.
-\end{lemma}
-\begin{proof}
-    The map is certainly a $P$-equivariant continuous bijection.
-    Moreover, since $F^\times I \subseteq P_0$ it follows that $P = (P\cap K).P_0$ and thus that $P/P_0$ is compact.
-    Since $U$ is Hausdorff it follows that the map is a homeomorphism.
-\end{proof}
-
-\begin{corollary}
-    \label{cor:dim1}
-    Let $\chi$ be a character of $P$ and $U$ be as in the lemma.
-    Then 
-    \begin{equation}
-        \dim\Hom_H((C_c^\infty(U),\lambda),(\C,\chi)) \le 1
-    \end{equation}
-    with equality iff $\chi = \Delta_P^{-1}$.
-\end{corollary}
-\begin{proof}
-    By the lemma $U$ is a homogeneous space. The result follows immediately.
-\end{proof}
-
-\begin{lemma}
-    \label{lem:int}
-    There exists a constant $c$ such that for all $f\in C_c^\infty(\shf U)$,
-    \begin{equation}
-        \int_{P/P_0} f(\Ad(p)X_0) d\mu_{P/P_0}(p) = c \int_{\shf U} f(u) du.
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    Let $U = \Ad(P)X_0$.
-    Then since $\Delta_P^{-1}(p) = \abs{\det (\Ad(p)|_{\shf U})}$, the functionals
-    \begin{align}
-        f &\mapsto \int_{P/P_0} f(\Ad(p)X_0) d\mu_{P/P_0}(p) \\
-        f &\mapsto \int_U f(u)d\mu_{\shf U}(u)
-    \end{align}
-    are both relatively invariant measures on $C_c^\infty(U)$ with multiplier $\Delta_P^{-1}$.
-    By corollary \ref{cor:dim1}, they must be proportional.
-    But $U$ is an open subvariety of $\shf U$ of codim $\ge 1$ and so for all $f\in C_c^\infty(\shf U)$
-    \begin{equation}
-        \int_U f(u)d\mu_{\shf U}(u) = \int_{\shf U}f(u)d\mu_{\shf U}(u).
-    \end{equation}
-\end{proof}
-
-\begin{lemma}
-    \label{lem:g_inv}
-    Let $(\sigma,V)$ be a smooth representation of $G$, $P$ a parabolic subgroup and $K$ a compact open subgroup of $G$ so that $G = P.K$.
-    If $\theta \in \check V$ satisfies $p.\theta = \delta_P(p) \theta$ then $\check \sigma(\chi_K)*\theta$ is $G$-invariant.
-\end{lemma}
-\begin{proof}
-    Let $\phi = \sigma(\chi_K)*\theta$.
-    We wish to show that $\phi(g.v) = \phi(v)$ for all $v\in V, g\in G$.
-    But the map $f_v:g\mapsto (v,g.\theta) \in C_c^\infty(G/P,\delta_P)$ by assumption and so $\phi(v) = \beta(f_v))$.
-    Moreover, the map $V\to C_c^\infty(G/P,\delta_P): v\mapsto f_v$ is clearly a $G$-homomorphism.
-    It follows that the composition $v\mapsto f_v\mapsto \beta(f_v) = \phi(v)$ is a $G$-homomorphism as required.
-\end{proof}
-
+\section{Orbital integrals}
 \begin{thm}
-    Let $\textbf{G} = \GL_n$.
-    Then there exists a constant $c$ such that for all $f\in C_c^\infty(\mf g)$ we have
-    \begin{equation}
-        \int_{G/G_0} f(yX_0y^{-1})dy^* = c\int_{\shf U}\left( \int_K \Ad^*k(f)(u) dk \right) du.
-    \end{equation}
+    Let $Y\in \mf g$. 
+    Then there exists a $G$-invariant measure $dg^*$ on $\mathcal O_Y$.
 \end{thm}
-\begin{proof}
-    The result follows by lemma \ref{lem:prod} and lemma \ref{lem:int}.
-\end{proof}
-
+\begin{remark}
+    If $Y$ is semisimple then $\mathcal O_Y$ is closed and so we can define the distribution $f\mapsto \int_{G/C_G(Y)}f(^gY)dg^*$ for $f\in C_c^\infty(\mf g)$.
+\end{remark}
+\begin{definition}
+    Define the subspace $D_r$ of $C_c^\infty(\mf g)$ by 
+    \begin{equation}
+        D_r := \sum_{x\in \mathcal B}C_c(\mf g/\mf g_{x,r})
+    \end{equation}
+    and define $D_{r^+}$ similarly.
+\end{definition}
+\begin{proposition}
+    The fourier transform gives bijective maps
+    \begin{align}
+        D_{r^+} &\leftrightarrow C_c^\infty(\mf g_{-r}) \nonumber \\
+        D_{r} &\leftrightarrow C_c^\infty(\mf g_{(-r)^+}). \nonumber
+    \end{align}
+\end{proposition}
+\section{Nilpotent orbits}
+Help.
 \section{Fourier transforms}
 \begin{definition}
     $G$ acts on $C_c^\infty(\mf g)$ in the obvious way.
@@ -2426,20 +2012,6 @@ converges and hence that $f\mapsto \int_{G/G_x}f(yxy^{-1})dy^*$ defines a distri
                                        & = T(\hat f).
     \end{align}
 \end{proof}
-\begin{definition}
-    Define the subspace $D_r$ of $C_c^\infty(\mf g)$ by 
-    \begin{equation}
-        D_r := \sum_{x\in \mathcal B}C_c(\mf g/\mf g_{x,r})
-    \end{equation}
-    and define $D_{r^+}$ similarly.
-\end{definition}
-\begin{proposition}
-    The fourier transform gives bijective maps
-    \begin{align}
-        D_{r^+} &\leftrightarrow C_c^\infty(\mf g_{-r}) \nonumber \\
-        D_{r} &\leftrightarrow C_c^\infty(\mf g_{(-r)^+}). \nonumber
-    \end{align}
-\end{proposition}
 \section{Character distribution}
 \begin{definition}
     Let $f\in C_c^\infty(G)$ and $(\pi,V)$ be an admissable representation of $G$.
@@ -2447,38 +2019,6 @@ converges and hence that $f\mapsto \int_{G/G_x}f(yxy^{-1})dy^*$ defines a distri
     Define $\tr(\pi(f))$ to be the trace of this map.
     The character distribution of $\pi$ is then the map $\Theta_\pi:C_c^\infty(G)\to \C$ given by $f\mapsto \tr(\pi(f))$.
 \end{definition}
-
-\begin{lemma}
-    Let $\pi_1,\pi_2$ be two unitary admissable representations of $G$ with $\Theta_{\pi_1} = \Theta_{\pi_2}$.
-    Then they are equivalent.
-\end{lemma}
-
-\begin{thm}
-    Let $P$ be a parabolic subgroup of $G$, $P = MN$ its Levi decomposition, $K$ a maximal compact open subgroup of $G$ such that $G = PK$, $\rho$ an admissable representation of $M$ and $\theta_\rho$ a locally integrable function on $M$ representing $\Theta_\rho$.
-    Then $\pi := \sInd_P^G\rho$ is admissable and
-    \begin{equation}
-        \Theta_\pi(f) = \int_K\int_M\int_N f(kmnk^{-1}) \delta_P(m)^{-1/2}\theta_\rho(m)dmdndk.
-    \end{equation}
-\end{thm}
-
-\begin{lemma}
-    Let $K' \subseteq K$ be compact open subgroups of $G$ and let $(\sigma,V)$ be an irreducible smooth representation of $K$.
-    Then
-    \begin{equation}
-        \tr\int_{K'}\sigma(k)dk \ne 0
-    \end{equation}
-    iff $\sigma$ is trivial on $K'$.
-\end{lemma}
-\begin{proof}
-    $(\Leftarrow)$ Trivial.
-    $(\Rightarrow)$ Let $L = \ker \sigma$.
-    This is a compact open subgroup of $K$ since $V$ must be finite dimensional.
-    Moreover, $K'/L\cap K'$ embedds naturally as a subgroup of $K/L$ and
-    \begin{equation}
-        \tr\int_{K'}\sigma(k)dk = \sum_{x\in K'/L\cap K'} \tr\sigma(x) \mu_G(L\cap K').
-    \end{equation}
-    Since this is nonzero, $\sigma$ is a component of $\Ind_{K'/L\cap K'}^{K/L}1$.
-\end{proof}
 \begin{definition}
     Let $(\pi,V)$ be an admissable representation of $G$.
     We define the depth, $\rho(\pi)$ of $(\pi,V)$ to be 
@@ -2609,20 +2149,11 @@ converges and hence that $f\mapsto \int_{G/G_x}f(yxy^{-1})dy^*$ defines a distri
     Let $\mathcal O_U$ be the coadjoint orbit of the element $-f$.
     By Kirillov theory $\mathcal O_U$ determines a $\abs{\mathcal O_U}^{1/2}$-dimensional representation $\eta_N$ of $U^F$.
     The induced representation $\Gamma_N = \Ind_{U^F}^{G^F}\eta_N$ is called the generalised Gelfand-Graev representation of $G^F$ associated to $N$.
-    Write $\gamma_N$ for the character of $\Gamma_N$.
 \end{definition}
 \begin{proposition}
     \begin{enumerate}
         \item $\gamma_N$ only depends on the $Ad(G^F)$-orbit of $N$.
         \item The support of $\gamma_N$ is contained in the closure of $Ad(G)(\exp(N))$.
-    \end{enumerate}
-\end{proposition}
-\begin{proposition}
-    For $N'\in \mathcal N^F$, let $\mathcal O(N')$ be the $Ad(G)$-orbit of $N'$ in $\mf g$.
-    \begin{enumerate}
-        \item If $\hat \gamma_N(N') \ne 0$, then $N$ must lie in the closure of $\mathcal O(N')$,
-        \item if $N\in \mathcal O(N')$ and $\hat\gamma_N(N') \ne 0$, then $N'$ is in the $G^F$-orbit of $N$,
-        \item $\hat \gamma_N(N) = q^{r(N)}\#C_G(N)$.
     \end{enumerate}
 \end{proposition}
 \begin{thm}
@@ -2634,407 +2165,9 @@ converges and hence that $f\mapsto \int_{G/G_x}f(yxy^{-1})dy^*$ defines a distri
         \item $\hat \mu_{\mathcal O'}(f_{x,\mathcal O}) = 0$ unless $\mathcal O$ lies in the closure $\overline{\mathcal O'}$.
         \item Suppose $\mathcal O_1$ and $\mathcal O_2$ are two nilpotent orbits in $\mf g$ which belong to the same nilpotent orbit in $\mf g$
             \begin{enumerate}
-                \item If $\mathcal O_1$ and $\mathcal O_2$ are distinct in $\mf g$, then $\hat \mu_{\mathcal O_1}(f_{x,\mathcal O_2}) = 0$.
-                \item If $\mathcal O_1 = \mathcal O_2 = \mathcal O$ in $\mf g$, then $\hat \mu_{\mathcal O}(f_{x,\mathcal O}) \ne 0$.
+                \item If $\mathcl O_1$ and $\mathcal O_2$ are distinct in $\mf g$, then $\hat \mu_{\mathcal O_1}(f_{x,\mathcal O_2})$.
             \end{enumerate}
-        \item For any irreducible smooth admissible representation $\pi$
-            \begin{equation}
-                \Theta_\pi(f_{x,\mathcal O}) = \sum_{\sigma \in \hat{M_x}}m_\pi(\sigma)\langle f_{x,\mathcal O},\sigma\rangle.
-            \end{equation}
     \end{enumerate}
 \end{thm}
-\section{Fourier transforms of nilpotent orbital integrals on generalised Gelfand Graev characters}
-\begin{lemma}
-    Let $Y = y + \mf g_{x_0,0^+}$ and $Z = z + \mf g_{x_0,0^+}$ be $G^F$ conjugate in $\mf m_{x_0} = \mf g_{x_0,0}/\mf g_{x_0,0^+}$.
-    If $\mathcal O$ is a conjugacy class in $G$ then
-    \begin{equation}
-        \mu_{\mathcal O}([Y]) = \mu_{\mathcal O}([Z]).
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    Since $Y$ and $Z$ are $G^F$ conjugate there exists a $g_0\in G_{x_0,0}$ such that $^{g_0}(y + \mf g_{x_0,0^+}) = z + \mf g_{x_0,0^+}$.
-    Let $x$ be a representative for $\mathcal O$.
-    Then
-    \begin{align}
-        \mu_{\mathcal O}([Y]) &= \int_{G/C_G(x)}1_{^{g_0}(y + \mf g_{x_0,0^+})}(^gx)dg^* \nonumber \\
-                              &= \int_{G/C_G(x)}1_{y + \mf g_{x_0,0^+}}(^{g_0^{-1}g}x)dg^* \nonumber \\
-                              &= \int_{G/C_G(x)}1_{y + \mf g_{x_0,0^+}}(^{g}x)dg^* = \mu_{\mathcal O}([Z])
-    \end{align}
-    using the left invariance of the measure.
-\end{proof}
-\begin{corollary}
-    \label{cor:f_nil}
-    Let $x\in \mathcal B$, and $e,h,f\in \mf g_{x,0}$ be an $\mf{sl}_2$ triple.
-    Let $f_{x,\mathcal O}$ be the character of the generalised Gelfand-Graev representation of $M_x^F$ attached to $\bar e\in \mf m_x^F$.
-    Then for any conjugacy class $\mathcal O'$ of $G$ we have
-    \begin{equation}
-        \hat \mu_{\mathcal O'}(f_{x,\mathcal O}) = \text{vol}(\mf g_{x,0}) \cdot \abs{G^F} \cdot \sum_{N} \frac{\hat\gamma_{\bar e}(N)}{C_{G^F}(N)} \mu_{\mathcal O'}(\mathcal O'\cap N)
-    \end{equation}
-    where the sum is over a set of representatives for the nilpotent conjugacy classes of $G^F$.
-\end{corollary}
-\begin{corollary}
-    The matrix of test functions is upper triangular.
-\end{corollary}
-\begin{proof}
-    Suppose $\mathcal O\nsubseteq \bar{\mathcal O'}$.
-    Let $e\in \mathcal O\cap \mf g_{x,0}$ where $x\in \mathcal B$ and let $f_{x,\mathcal O}$ be the corresponding generalised Gelfand-Graev character.
-    Let $N = X + \mf g_{x,0^+} \in \mf m_x^F$ be a nilpotent element.
-    Then $\mu_{\mathcal O'}(\mathcal O' \cap N) \ne 0$ only if $X\in \bar{\mathcal O'}$.
-    But $\hat \gamma_{\bar e}(N) \ne 0$ only if $\bar e$ lies in the closure of the orbit of $N$.
-    In other words, it is $0$ unless $e+\mf g_{x,0^+} \cap \mathcal O(N) \ne \emptyset$.
-    \begin{equation}
-        \hat \gamma_{\bar e}(N) \mu_{\mathcal O'}(\mathcal O'\cap N).
-    \end{equation}
-    We need $\mathcal O \subseteq \overline{\mathcal O(X)}$ and $\mathcal O(X)\subseteq \overline{\mathcal O'}$ for this to be nonzero.
-\end{proof}
-\begin{remark}
-    $\hat \mu_{\mathcal O}(f_{x,\mathcal O})$ is easy to compute and is equal to
-    \begin{equation}
-        \text{vol}(\mf g_{x_0,0^+}) \cdot q^{r(\bar e)} \cdot \abs{G^F} \cdot \mu_{\mathcal O}(\mathcal O \cap (e + \mf g_{x_0,0^+})).
-    \end{equation}
-\end{remark}
-\subsubsection{GL(2) example calculation}
-Let $G = \GL_2$.
-Then nilpotent conjugacy classes have representatives
-\begin{equation}
-    X_{\lambda_1} = \begin{pmatrix}
-        0 & 0 \\
-        0 & 0
-    \end{pmatrix},
-    \quad
-    X_{\lambda_2} = \begin{pmatrix}
-        0 & 1 \\
-        0 & 0
-    \end{pmatrix}.
-\end{equation}
-The centralisers are
-\begin{equation}
-    C_{\mf g}(X_{\lambda_1}) = \mf g,
-    \quad
-    C_{\mf g}(X_{\lambda_2}) = \left\{\begin{pmatrix}
-        a & b \\
-        0 & a
-    \end{pmatrix}\right\}
-\end{equation}
-and so
-\begin{equation}
-    r(X_{\lambda_1}) = 0, \quad r(X_{\lambda_2}) = 1.
-\end{equation}
-Let $Y_{\lambda_2} = X_{\lambda_2}^T$ and $\Sigma_{\lambda_2} = -Y_{\lambda_2} + C_{\mf g}(X_{\lambda_2})$.
-Then the number of elements in $\Sigma_{\lambda_2}$ $G^F$ conjugate to $X_{\lambda_2}$ is $1$.
-Thus we get
-\begin{center}
-    \begin{tabular}{c|c c}
-        & $X_{\lambda_1}$ & $X_{\lambda_2}$ \\ \hline 
-        $\hat \gamma_{X_{\lambda_1}}$ & $\abs{G^F}$ & $\abs{G^F}$ \\
-        $\hat \gamma_{X_{\lambda_2}}$ & 0 & $q \cdot \abs{C_{G^F}(X_{\lambda_2})}$.
-    \end{tabular}
-\end{center}
-We now calculate the nilpotent orbital integrals.
-Note that $\mathcal O_{\lambda_i}\cap (X_{\lambda_i} + \mf g_{x_0,0^+}) = ^{G_{x_0,0^+}}X_{\lambda_i}$.
-Therefore
-\begin{align}
-    \mu_{\mathcal O_{\lambda_i}}(\mathcal O_{\lambda_i}\cap (X_{\lambda_i} + \mf g_{x_0,0^+})) &= \int_{G/C_G(X_{\lambda_i})}1_{^{G_{x_0,0^+}}X_{\lambda_i}}(^gX_{\lambda_i}) dg^* \nonumber \\
-                                                                                               &= \int_{G/C_G(X_{\lambda_i})}1_{G_{x_0,0^+}C_G(X_{\lambda_i})}(g)dg^* \nonumber \\
-                                                                                               &= \frac{\mu_G(G_{x_0,0^+})}{\mu_H(H\cap G_{x_0,0^+})}
-\end{align}
-where $H = C_G(X_{\lambda_i})$ and we used proposition \ref{prop:left_semi_inv}.
-It remains to determine $\mu_{\mathcal O_{\lambda_2}}(\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+})$.
-To do this we first determine $\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}$.
-Note that $G_{x_0,0}$ acts on both $\mathcal O_{\lambda_2}$ and $\mf g_{x_0,0^+}$ by conjugation and so $\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}$ splits into a disjoint union of $G_{x_0,0}$ orbits.
-\begin{lemma}
-    Let $t_n = \begin{pmatrix} \bar \omega^n & 0 \\ 0 & 1\end{pmatrix}$.
-    Then
-    \begin{equation}
-        \mathcal O_{\lambda_2}\cap \mf g_{x_0,0} = \coprod_{n\ge0}\phantom{ }^{G_{x_0,0}t_n}X_{\lambda_2}.
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    We certainly have $(\supseteq)$.
-    For $(\subseteq)$ let $X = \begin{pmatrix} a & b \\ c & d\end{pmatrix}$.
-    Then $X\in \mathcal O_{\lambda_2}\cap \mf g_{x_0,0}$ iff $a,b,c,d\in R$, $X\ne 0$ and $\tr X = \det X = 0$.
-    Thus $d = -a$ and $a^2+bc = 0$.
-    \begin{enumerate}
-        \item If $a = 0$ then $b = 0$ or $c = 0$ and the result is obvious.
-        \item If $b = 0$ or $c = 0$ then $a = 0$ and the result is obvious.
-    \end{enumerate}
-    Thus it remains to consider the case when $a,b,c\ne 0$.
-    In this case $b/a = -a/c$ and so either $b/a \in R$ or $c/a \in R$.
-    If $b/a\in R$ then
-    \begin{equation}
-        \begin{pmatrix} 1 & b/a \\ 0 & 1\end{pmatrix}\begin{pmatrix} a & b \\ c & -a\end{pmatrix}\begin{pmatrix} 1 & -b/a \\ 0 & 1\end{pmatrix} = \begin{pmatrix} 0 & 0 \\ c & 0\end{pmatrix}.
-    \end{equation}
-    It is clear that this lies in the $G_{x_0,0}$ orbit of $^{t_{\nu(c)}}X_{\lambda_2}$.
-If $c/a\in R$ then 
-    \begin{equation}
-        \begin{pmatrix} 1 & 0 \\ -c/a & 1\end{pmatrix}\begin{pmatrix} a & b \\ c & -a\end{pmatrix}\begin{pmatrix} 1 & 0 \\ c/a & 1\end{pmatrix} = \begin{pmatrix} 0 & b \\ 0 & 0\end{pmatrix}.
-    \end{equation}
-    which lies in the $G_{x_0,0}$ orbit of $^{t_{\nu(b)}}X_{\lambda_2}$.
-
-    It is straightforward to see that the orbits are distinct.
-    This proves the lemma.
-\end{proof}
-\begin{corollary}
-    \begin{equation}
-        \mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+} = \coprod_{n\ge1}\phantom{ }^{G_{x_0,0}t_n}X_{\lambda_2}.
-    \end{equation}
-\end{corollary}
-\begin{proof}
-    Let $A\in \mf g_{x_0,0} = M_2(R)$.
-    Then $A\in \mathcal O_{\lambda_2}$ iff $\bar \omega A \in \mathcal O_{\lambda_2}$.
-    Thus $\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+} = \bar \omega(\mathcal O_{\lambda_2}\cap \mf g_{x_0,0})$. But $\bar\omega \cdot\phantom{x}^{t_n}X_{\lambda_2} = \phantom{x}^{t_{n+1}}X_{\lambda_2}$ and so the result follows.
-\end{proof}
-We are now able to calculate $\mu_{\mathcal O_{\lambda_2}}(\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+})$.
-\begin{align}
-    \mu_{\mathcal O_{\lambda_2}}([\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}]) &= \int_{G/C_G(X_{\lambda_2})}1_{\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}}(^gX_{\lambda_2})dg^* \nonumber \\
-                                                                               &= \int_{G/C_G(X_{\lambda_2})}\sum_{n\ge1}1_{^{G_{x_0,0}t_n}X_{\lambda_2}}(^gX_{\lambda_2})dg^* \nonumber \\
-                                                                               &= \sum_{n\ge1}\int_{G/C_G(X_{\lambda_2})}1_{G_{x_0,0}t_nC_G(X_{\lambda_2})}(g)dg^* \nonumber \\
-                                                                               &= \sum_{n\ge1} \frac{\mu_G(\phantom{ }^{t_n^{-1}}G_{x_0,0})}{\mu_H(H\cap \phantom{ }^{t_n^{-1}}G_{x_0,0})}
-\end{align}
-where $H = C_G(X_{\lambda_2})$.
-Now, let 
-\begin{align}
-    H_n &= H\cap \phantom{ }^{t_n^{-1}}G_{x_0,0} = \left\{\begin{pmatrix} a & \bar\omega^{-n} b \\ 0 & a\end{pmatrix} : a\in R^\times, b\in R\right\} \\
-    U_n &= \left\{\begin{pmatrix} 1 & \bar\omega^{-n} R \\ 0 & 1\end{pmatrix}\right\}, \quad Z = R^\times I_2.
-\end{align}
-Note that these are all abelian groups and that $H_n = ZU_n = H_0U_n$.
-Thus 
-\begin{equation}
-    \abs{H_n:H_0} = \abs{H_0U_n:H_0} = \abs{U_n:U_n\cap H_0} = \abs{\bar\omega^{-n}R:R} = q^n
-\end{equation}
-and so $\mu_H(H_n) = q^n\mu_H(H_0) = q^n\cdot\mu_H(H\cap G_{x_0,0})$.
-Now, $H\cap G_{x_0,0^+}$ is the kernel of the map reduction mod $\mf p$ map $H\cap G_{x_0,0}\to \GL_2(\mathbb F_q)$.
-The image of this map is 
-\begin{equation}
-C_{G^F}(X_{\lambda_2}) = \left\{\begin{pmatrix} a & b \\ 0 & a\end{pmatrix} : a,b\in \mathbb F_q,a\ne 0\right\}
-\end{equation}
-which has size $q(q-1)$.
-It follows that 
-\begin{equation}
-    \mu_H(H\cap G_{x_0,0}) = q(q-1) \cdot \mu_H(H\cap G_{x_0,0^+}).
-\end{equation}
-We also have that
-\begin{equation}
-    \mu_G(^{t_n^{-1}}G_{x_0,0}) = \mu_G(G_{x_0,0}) = \abs{G^F} \cdot \mu_G(G_{x_0,0^+})
-\end{equation}
-where we use the fact that $G$ is unimodular.
-Thus
-\begin{align}
-    \mu_{\mathcal O_{\lambda_2}}([\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}]) &= \frac{\abs{G^F}}{\abs{C_G(X_{\lambda_2})}} \cdot \frac{\mu_G(G_{x_0,0^+})}{\mu_H(H\cap G_{x_0,0^+})}\sum_{n\ge1}\frac 1{q^n} \nonumber \\
-                                                                               &= (q+1) \cdot \mu_{\mathcal O_{\lambda_2}}([\mathcal O_{\lambda_2}\cap (X_{\lambda_2} + \mf g_{x_0,0^+})]).
-\end{align}
-
-We can now finally compute the matrix $(\hat \mu_{\mathcal O_j}(f_{x,\mathcal O_i}))_{i,j}$.
-If we normalise the nilpotent orbital integrals so that the diagonal of this matrix consists only of $1$'s then we have that
-\begin{align}
-    \mu_{\mathcal O_{\lambda_1}}([\mathcal O_{\lambda_1}\cap \mf g_{x_0,0^+}]) &= \frac 1{\text{vol}(\mf g_{x_0,0^+}) \cdot \abs{G^F}} \\
-    \mu_{\mathcal O_{\lambda_2}}([\mathcal O_{\lambda_2}\cap (X_{\lambda_2} + \mf g_{x_0,0^+}]) &= \frac 1 {\text{vol}(\mf g_{x_0,0^+}) \cdot q\cdot\abs{G^F}} \\ 
-    \mu_{\mathcal O_{\lambda_2}}([\mathcal O_{\lambda_2}\cap \mf g_{x_0,0^+}]) &= \frac {q+1} {\text{vol}(\mf g_{x_0,0^+}) \cdot q\cdot\abs{G^F}}.
-\end{align}
-Plugging all of this into corollary \ref{cor:f_nil} we get that 
-\begin{equation}
-    \hat \mu_{\mathcal O_{\lambda_2}}(f_{x_0,\mathcal O_{\lambda_1}}) = q+1.
-\end{equation}
-Thus $(\hat \mu_{\mathcal O_j}(f_{x,\mathcal O_i}))_{i,j}$ is given by
-\begin{center}
-    \begin{tabular}{c|c c}
-        & $\mu_{\mathcal O_{\lambda_1}}$ & $\mu_{\mathcal O_{\lambda_2}}$ \\ \hline 
-        $f_{x_0,\mathcal O_{\lambda_1}}$ & 1 & q+1 \\
-        $f_{x_0,\mathcal O_{\lambda_2}}$ & 0 & 1.
-    \end{tabular}
-\end{center}
-\subsubsection{GL(n) - Approach 1}
-Let $\lambda$ be a partition of $n$ and let $\mathcal O_\lambda + \mf g_{x_0,0^+}$ denote the set 
-\begin{equation}
-    \bigcup_{N\in \mathcal O_\lambda(G^F)} N.
-\end{equation}
-Note that this set is closed under conjugation by $G_{x_0,0}$.
-Moreover, we have that for any $N\in \mathcal O_\lambda(G^F)$, $\mu_{\mathcal O_\eta}(\mathcal O_\lambda + \mf g_{x_0,0^+}) = \abs{\text{ccl}_{G^F}(N)}\mu_{\mathcal O_\eta}(N)$ and so 
-\begin{equation}
-    \hat \mu_{\mathcal O_\eta}(f_{x,\mathcal O_\lambda}) = \text{vol}(\mf g_{x,0}) \cdot \sum_{\nu} \hat\gamma_{\bar e}(X_\nu) \mu_{\mathcal O_\eta}(\mathcal O_\nu + \mf g_{x_0,0^+}).
-\end{equation}
-Write $\mathcal N_{x_0}$ for $\mf g_{x_0,0}\cap \mathcal N$ and $\mathcal N_{x_0,\lambda}$ for $\mathcal N_{x_0}\cap \mathcal O_\lambda$.
-Both of these sets are closed under conjugation by $G_{x_0,0}$ and $\mathcal N_{x_0} = \bigcup_{\lambda\vdash n} \mathcal N_{x_0,\lambda}$.
-We can thus write each $\mathcal N_{x_0,\lambda}$ as a union of $G_{x_0,0}$ conjugacy classes:
-\begin{equation}
-    \mathcal N_{x_0,\lambda} = \bigcup_{\alpha} \mathcal C_{x_0,\lambda,\alpha}.
-\end{equation}
-Let $g_{\lambda,\alpha} \in \GL_n(k)$ be such that $^{g_{\lambda,\alpha}}X_\lambda \in \mathcal C_{x_0,\lambda,\alpha}$.
-Since $\mathcal N_{x_0} \subseteq \bigcup_{\lambda\vdash n} \mathcal O_\lambda + \mf g_{x_0,0^+}$ each $\mathcal C_{x_0,\lambda,\alpha}$ must belong to a unique $\mathcal O_\eta + \mf g_{x_0,0^+}$ for some $\eta\vdash n$.
-Define $\mathcal C(\lambda,\eta)$ to be the set $\set{\alpha:\mathcal C_{x_0,\lambda,\alpha}\subseteq \mathcal O_\eta + \mf g_{x_0,0^+}}$.
-Then 
-\begin{equation}
-    \mathcal O_\lambda \cap (\mathcal O_\eta + \mf g_{x_0,0^+}) = \bigcup_{\alpha\in \mathcal C(\lambda,\eta)}\phantom{x}^{G_{x_0,0}g_{\lambda,\alpha}}X_\lambda
-\end{equation}
-and so
-\begin{align}
-    \mu_{\mathcal O_\lambda}(\mathcal O_\eta + \mf g_{x_0,0^+}) &= \int_{G/C_G(X_\lambda)}\sum_{\alpha\in \mathcal C(\lambda,\eta)}1_{G_{x_0,0}g_{\lambda,\alpha}C_G(X_\lambda)}(g)dg^* \nonumber \\
-                                                                &= \sum_{\alpha\in \mathcal C(\lambda,\eta)}\frac{\mu_G(G_{x_0,0})}{\mu_H(H\cap G_{x_0,0}^{g_{\lambda,\alpha}})},
-\end{align}
-where $H = C_G(X_\lambda)$.
-Note that 
-\begin{equation}
-    \mu_{\mathcal O_\lambda}(\mathcal O_\lambda + \mf g_{x_0,0^+}) = \frac{\mu_G(G_{x_0,0})}{\mu_H(H\cap G_{x_0,0})}
-\end{equation}
-so if we normalise the invariant measure so that $\hat \mu_{\mathcal O_\lambda}(f_{x_0,\mathcal O_\lambda}) = 1$ then
-\begin{equation}
-    \frac{\mu_G(G_{x_0,0})}{\mu_H(H\cap G_{x_0,0})} = \left(\text{vol}(\mf g_{x_0,0}) q^{r(X_\lambda)}\abs{C_{G^F}(X_\lambda)}\right)^{-1}.
-\end{equation}
-Thus
-\begin{align}
-    \mu_{\mathcal O_\lambda}(\mathcal O_\eta + \mf g_{x_0,0^+}) = \frac{1}{\text{vol}(\mf g_{x_0,0})q^{r(X_\lambda)}\abs{C_{G^F}(X_\lambda)}}\sum_{\alpha\in \mathcal C(\lambda,\eta)}\frac{\mu_H(H\cap G_{x_0,0})}{\mu_H(H\cap G_{x_0,0}^{g_{\lambda,\alpha}})}.
-\end{align}
-\begin{remark}
-    $G_{x_0,0}^{g_{\lambda,\alpha}} = G_{g_{\lambda,\alpha}^{-1}x_0,0}$ and so if we let $\Omega(\lambda,\alpha) = \set{x_0,g_{\lambda,\alpha}^{-1}x_0}$ then
-    \begin{equation}
-        \frac{\mu_H(H\cap G_{x_0,0})}{\mu_H(H\cap G_{x_0,0}^{g_{\lambda,\alpha}})} = \frac{\abs{C_{G_{x_0,0}}(X_\lambda):C_{G_{\Omega(\lambda,\alpha)}}(X_\lambda)}}{\abs{C_{G_{g_{\lambda,\alpha}^{-1}x_0,0}}(X_\lambda):C_{G_{\Omega(\lambda,\alpha)}}(X_\lambda)}}.
-    \end{equation}
-\end{remark}
-\subsubsection{Results on double cosets}
-\begin{proposition}
-    \label{prop:double_cosets}
-    Let $G$ be a group, $H,K\le G$, $L\le H$ subgroups and $g$ an element of $G$.
-    Then 
-    \begin{enumerate}
-        \item $\set{\sigma g:\sigma\in K\backslash G/H}$ is a set of representatives for $K\backslash G/H^g$,
-        \item $\set{\sigma\tau: \sigma\in K\backslash G/H,\tau\in K^\sigma\cap H\backslash H/L}$ is a set of representatives for $K\backslash G/L$.
-    \end{enumerate}
-\end{proposition}
-\begin{proposition}
-    \label{prop:par_double_cosets}
-    Let $n\in \mathbb N$ and $A=(a_1,\dots,a_k), B=(b_1,\dots,b_l)$ be such that $n = \sum_i a_i = \sum_i b_i$ and $a_i,b_i\ge 0$ for all $i$.
-    Then
-    \begin{equation}
-        P_A\backslash G/P_B \longleftrightarrow S_A\backslash S_n/S_B \longleftrightarrow T(A,B)
-    \end{equation}
-    where 
-    \begin{equation}
-        T(A,B) = \set{(c_{ij})_{1\le i\le k,1\le j\le l} : \sum_j c_{ij} = a_i, \sum_i c_{ij} = b_j, c_{ij}\ge 0}.
-    \end{equation}
-\end{proposition}
-\begin{proof}
-    Let $A_i = \sum_{m=1}^ia_i$ and $B_i = \sum_{m=1}^ib_i$.
-    For $\sigma\in S_n$ define $\Phi(\sigma) = (c_{ij})_{ij}$ where 
-    \begin{equation}
-        c_{ij} = \abs{\sigma([A_{i-1}+1,A_i])\cap [B_{i-1}+1,B_i]}.
-    \end{equation}
-    It is clear that this map descends to a well-defined map on double cosets $S_A\backslash S_n/S_B\to T(A,B)$.
-    It is a straightforward check to see moreover that this map is a bijection.
-\end{proof}
-\begin{corollary}
-    \label{cor:pu_d_cosets}
-    Let $n,A,B$ be as in the previous proposition. 
-    Let $U_B$ denote the unipotent radical of $P_B$.
-    Then
-    \begin{equation}
-        P_A\backslash G/U_B \longleftrightarrow \set{((c_{ij})_{ij},f):(c_{ij})_{ij}\in T(A,B),f\in \prod_jGr(c_{\bullet j})}
-    \end{equation}
-    where $c_{\bullet j}$ denotes $(c_{1j},\dots,c_{lj})$ and $Gr(c_{\bullet j})$ is the grassmannian associated to this sequence.
-\end{corollary}
-\begin{proof}
-    By proposition \ref{prop:double_cosets}, $\set{(\sigma,f):\sigma\in P_A\backslash G/P_B, f\in P_A^\sigma\cap P_B\backslash P_B/U_B}$ is a set of representatives for $P_A\backslash G/U_B$.
-    Moreover for a given $\sigma\in P_A\backslash G/P_B$ corresponding to $(c_{ij})_{ij}\in T(A,B)$, $P_A^\sigma\cap P_B$ consists of the block matrices in $P_B$ where the $(i,j)$th block looks like
-    \begin{equation}
-        \begin{pmatrix}
-            A_{1,1} & A_{1,2} & \dots & A_{1,k} \\
-            0 & A_{2,2} & \dots & A_{2,k} \\
-            \vdots & \vdots & \ddots & \vdots \\ 
-            0 & 0 & \hdots & A_{k,k}
-        \end{pmatrix}
-    \end{equation}
-    when $j\ge i$, and is $0$ otherwise.
-    Here $A_{a,b}$ is a matrix of size $c_{ai}\times c_{bj}$.
-    But we have the semidirect product decomposition $P_B = M_B.U_B$ where $M_B = \prod_i \GL_{b_i}$ and $U_B\normal P_B$ and so the action of $P_A^\sigma\cap P_B$ on $P_B/U_B$ is isomorphic to the action of $P_A^\sigma\cap P_B$ on $M_B$ where $g = mu\in P_A^\sigma\cap P_B, m\in M_B,u\in U_B$ acts by multiplication by $m$.
-    It is clear that the orbits of this action are exactly the orbits of the action by $\prod_j P_{c_{\bullet j}}$ on $M_B$ by left multiplaction and hence can be parametrised by an element of $\prod_j Gr(c_{\bullet j})$.
-\end{proof}
-\subsubsection{Results on parabolic subgroups}
-\begin{definition}
-    Let $n\in \N$, $\lambda\dashv n$ be a partition and $X_\lambda$ a nilpotent element with Jordan decomposition corresponding to $\lambda$.
-    Let $(e,h,f)$ be an $\lsl_2$-triple with $e = X_\lambda$ and $\mf g_k$ be the weight-space of weight $k$.
-    To this $\lsl_2$ triple we may associate a parabolic subgroup $P_0$ of $G$ with Lie algebra equal to $\mf p_0 = \bigoplus_{K\ge0}\mf g_k$.
-    Let $A = (a_1,\dots,a_k)$ be the type of the standard parabolic which is conjugate to $P_0$ and define $\Theta(\lambda) = A$.
-\end{definition}
-\begin{proposition}
-    The function $\Theta$ is well defined.
-\end{proposition}
-\begin{thm}
-    The function $\Theta$ can be computed via the following operations on the Young diagram of $\lambda$:
-    \begin{enumerate}
-        \item Center all the rows,
-        \item Count the number of boxes along each column.
-    \end{enumerate}
-\end{thm}
-\begin{proof}
-    Blah blah blah.
-\end{proof}
-\begin{definition}
-    Let $P$ be a parabolic subgroup which stablises the flag $0 = V_0 \subseteq V_1 \subseteq \cdots \subseteq V_k = V$.
-    Recall that $P$ has unipotent radical $U = \set{g\in P: (g-I)V_i\subseteq V_{i-1}}$.
-    Define $U^{(2)} = \set{g\in P: (g-I)V_i\subseteq V_{i-2}}$.
-\end{definition}
-\begin{proposition}
-    $U^{(2)}\normal P$.
-\end{proposition}
-\subsubsection{GL(n) - Approach 2}
-We have that $\hat \mu_{\mathcal O_\lambda} = \Theta_{\sInd_{P(\lambda)}^G1}$.
-Thus
-\begin{equation}
-    \hat \mu_{\mathcal O_\lambda}(f_{x,\mathcal O_\eta}) = \langle \Gamma_{x,\mathcal O_\eta}, (\sInd_{P(\lambda)}^G1)^{G_{x,0}}\rangle.
-\end{equation}
-But $(\sInd_{P(\lambda)}^G1)^{G_{x,0^+}}$ is isomorphic to $\sInd_{P(\lambda)^F}^{G^F}1$ as $G_{x,0}$-representations.
-We also have that $\Gamma_{x,\mathcal O_\lambda} = \Ind_{K_\eta}^{G^F}\xi_\eta$.
-Thus
-\begin{align}
-    \hat \mu_{\mathcal O_\lambda}(f_{x,\mathcal O_\eta}) &= \langle 1, \Res_{P(\lambda)^F}^{G^F}\Ind_{K_\eta}^{G^F}\xi_\eta\rangle \nonumber \\
-                                                         &= \langle 1, \bigoplus_{g\in P(\lambda)^F\backslash G^F/K_\eta} \Ind_{P(\lambda)\cap \hphantom{x}^gK_\eta}^{P(\lambda)}g\circ \Res_{K_\eta\cap P(\lambda)^g}^{K_\eta}\xi_\eta\rangle \nonumber \\
-                                                         &= \sum_{g\in P(\lambda)^F\backslash G^F/K_\eta} \langle1,g\circ\Res_{K_\eta\cap P(\lambda)^g}^{K_\eta}\xi_\eta\rangle \nonumber \\
-                                                         &= \sum_{g\in P(\lambda)^F\backslash G^F/K_\eta} \langle1,\Res_{K_\eta\cap P(\lambda)^g}^{K_\eta}\xi_\eta\rangle \nonumber \\
-                                                         &= \sum_{g\in P(\lambda)^F\backslash G^F/K_\eta} [K_\eta\cap P(\lambda)^g \subseteq \ker \xi_\eta].
-\end{align}
-\begin{remark}
-    This is a 'basis invariant' invariant sum. 
-    By this we mean the following: let $b$ be a change of basis matrix and set $K_\eta' = \hphantom{x}^bK_\eta$.
-    Then
-    \begin{equation}
-        \sum_{g\in P(\lambda)^F\backslash G^F/K_\eta} [K_\eta\cap P(\lambda)^g \subseteq \ker \xi_\eta] = \sum_{g\in P(\lambda)^F\backslash G^F/K_\eta'} [K_\eta'\cap P(\lambda)^{g} \subseteq \hphantom{,}^b\ker \xi_\eta].
-    \end{equation}
-    It follows that we can work with $K_\eta$ in any basis we like as long as we view the kernel of $\xi_\eta$ in the same basis.
-    Since $K_\eta \subseteq U_\eta \subseteq P_\eta$ where $P_\eta$ is a parabolic subgroup of $G^F$, we will work in a basis with respect to which $P_\eta$ is a standard parabolic.
-\end{remark}
-\begin{proposition}
-    There is a bijection
-    \begin{equation}
-        P_A\backslash G/K_\eta \longleftrightarrow \set{(\sigma,f,k):\sigma\in S_A\backslash S_n/S_B,f\in \prod_j Gr(\Phi(\sigma)_{\bullet j}),k\in P_A^{\sigma f}\cap U_B\backslash }
-    \end{equation}
-\end{proposition}
-By proposition \ref{prop:double_cosets} and corollary \ref{cor:pu_d_cosets} 
-\begin{equation}
-    \set{\sigma f k: \sigma\in }
-\end{equation}
-\begin{equation}
-    \sum_{\substack{\sigma\in S_A\backslash S_n/S_B \\ f\in \prod_j Gr(\Phi(\sigma)_{\bullet j})}} \sum_{k\in P(\lambda)^{\sigma f}\cap U_B\backslash U_B/K}.
-\end{equation}
-\subsection{Wave front sets}
-\begin{lemma}
-    \label{lem:nil_wavefront}
-    Let $(\pi,V)$ be a smooth representation of $G$ and $x\in \mathcal B$.
-    If $\mathcal O$ is a nilpotent wavefront then $\Theta_\pi(f_{x,\mathcal O}) \ne 0$.
-\end{lemma}
-\begin{lemma}
-    \label{lem:fin_red}
-    Let $(\pi,V)$ be a smooth representation of $G$, $x\in \mathcal B$ and $\mathcal O$ a nilpotent orbit of $\mf g$.
-    Then $\Theta_\pi(f_{x,\mathcal O}) = 0$ iff $\Gamma_{\bar e}$ and $V^{G_{x,0^+}}$ have no irreducible constituents in common.
-\end{lemma}
-\begin{proposition}
-    The wave front set of a smooth admissible representation $(\pi,V)$ of depth zero can be determined from the wave front sets of the finite field representations.
-    In particular they are the maximal nilpotent orbits such that $V^{G_{x,0^+}}$ has an irreducible component in common with the corresponding generalised Gelfand-Graev representation.
-\end{proposition}
-\begin{proof}
-    We have that $\Theta_\pi = \sum_{\mathcal O'}c_{\mathcal O'}\hat \mu_{\mathcal O'}$.
-    But $\hat \mu_{\mathcal O'}(f_{x,\mathcal O}) \ne 0$ only if $\mathcal O \subseteq \overline{\mathcal O'}$.
-    Thus $\Theta_\pi(f_{x,\mathcal O}) = 0$ if $\mathcal O$ is strictly larger than a wavefront nilpotent.
-    Finally, if $\Theta_\pi(f_{x,\mathcal O}) \ne 0$ then $\mathcal O \subseteq WF(\pi)$ and so $\mathcal O$ is less than some wavefront nilpotent.
-    Together with lemma \ref{lem:nil_wavefront} it follows that the wavefront nilpotents are the maximal nilpotent orbits such that $\Theta_\pi(f_{x,\mathcal O}) \ne 0$.
-    But by lemma \ref{lem:fin_red} it follows that the wavefront nilpotents are the maximal nilpotent orbits such that $V^{G_{x,0^+}}$ has an irreducible constituent in common with the corresponding generalised Gelfand-Graev representation.
-\end{proof}
 \end{document}
+

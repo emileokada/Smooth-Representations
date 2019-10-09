@@ -16,6 +16,7 @@
 \usepackage{mathrsfs}   % Script font with \mathscr{}
 \usepackage{stmaryrd}   % Brackets
 \usepackage{thmtools}   % Theorem-like environments, extends amsthm
+\usepackage{bm}   % Theorem-like environments, extends amsthm
 
 %% Graphics
 \usepackage[dvipsnames,svgnames,cmyk]{xcolor}     % Pre-defined colors
@@ -202,7 +203,7 @@
 %% Lie algebras
 \newcommand{\lalg}[1]{{\normalfont\mathfrak{#1}}}	% General for Lie algebras
 \newcommand{\gl}{\lalg{gl}}							% General linear algebra
-%\newcommand{\sl}{\lalg{sl}}							% Special linear algebra
+\newcommand{\lsl}{\lalg{sl}}						% Special linear algebra
 
 %% Cones of cycles on varieties and related objects
 \newcommand{\NS}{\mathrm{NS}}						% Neron-Severi group
@@ -237,6 +238,7 @@
 \newcommand{\ol}[1]{\overline{#1}}							% Overline
 \newcommand{\Dirsum}{\bigoplus}								% Direct sum
 \newcommand{\shf}[1]{\mathscr{#1}}							% Sheaf
+\newcommand{\mf}[1]{\mathfrak{#1}}							% Sheaf
 \newcommand{\OO}{\mathcal{O}}								% Structure sheaf
 \DeclareMathOperator{\id}{id}								% Identity
 \newcommand{\tens}[1]{\otimes_{#1}}							% Tensor product
@@ -267,6 +269,12 @@
 \newcommand{\sInd}{\text{s-Ind}}						    % Smooth induction
 \newcommand{\cInd}{\text{c-Ind}}						    % Compact induction 
 \newcommand{\sMod}{\text{Mod}}						        % Smooth modules
+\newcommand{\stab}{\text{stab}}						        % Stabiliser
+\newcommand{\spanv}{\text{span}}						    % Span
+\newcommand{\St}{\text{St}}						            % Steinberg representation
+\newcommand{\ui}{\bm{\iota}}						        % Unitary smooth induction 
+\newcommand{\Ad}{\text{Ad}}						            % Adjoint
+\newcommand{\ad}{\text{ad}}						            % Adjoint
 
 %%\newcommand{\dual}{{}^{\smash{\scalebox{.7}[1.4]{\rotatebox{90}{\guilsinglleft}}}}}	% Dual of sheaf/vector space et cetera
 

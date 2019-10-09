@@ -1,9 +1,2 @@
-[0] Config.pm:318> INFO - This is Biber 1.8
-[0] Config.pm:321> INFO - Logfile is 'smooth_reps.blg'
-[76] biber-darwin:275> INFO - === Thu Apr  4, 2019, 15:28:27
-[77] Biber.pm:333> INFO - Reading 'smooth_reps.bcf'
-[139] Biber.pm:630> INFO - Found 0 citekeys in bib section 0
-[139] Utils.pm:169> WARN - The file 'smooth_reps.bcf' does not contain any citations!
-[173] bbl.pm:482> INFO - Writing 'smooth_reps.bbl' with encoding 'ascii'
-[173] bbl.pm:555> INFO - Output to smooth_reps.bbl
-[173] Biber.pm:105> INFO - WARNINGS: 1
+[0] 554906f9.pm:318> INFO - This is Biber 1.8
+[1] 554906f9.pm:321> INFO - Logfile is 'smooth_reps.blg'
